@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scennes/players/player_cat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scennes/chao.tscn" type="PackedScene" id=2]
+
+[node name="Test" type="Node2D"]
+
+[node name="PlayerCat" parent="." instance=ExtResource( 1 )]
+position = Vector2( 174, 75 )
+
+[node name="chao" parent="." instance=ExtResource( 2 )]
+position = Vector2( 535, 377 )
+scale = Vector2( 17.898, 1 )
