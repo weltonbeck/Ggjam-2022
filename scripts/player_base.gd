@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+	
 const MAX_SPEED = 170
 var GRAVITY = 20
 const MAX_JUMP_FORCE = 420
@@ -11,7 +11,7 @@ var movement = Vector2(0, 0)
 var input_x = 0
 
 enum {
-	IDLE, WALK, JUMP, FALL, FLY, HIT
+	IDLE, WALK, JUMP, FALL, FLY, DEFENSE, ATACK, MORPH, HIT
 }
 
 var status = IDLE
@@ -20,19 +20,24 @@ func _physics_process(_delta):
 	pass
 	
 func startPhysics():
-	movement.y += GRAVITY
+	if status != MORPH :
+		movement.y += GRAVITY
 	
 func finishPhysics():
 	if is_on_floor() :
 		movement.y = 0
 		current_jump = 0
 		
-		if (input_x == 0 && (movement.x < 0.01 || movement.x > -0.01) ) :
-			status = IDLE
-		else :
-			status = WALK
-	elif movement.y > 0:
-		status = FALL
+		if status != DEFENSE && status != ATACK && status != MORPH:
+			if (input_x == 0 && (movement.x < 0.01 || movement.x > -0.01) ) :
+				status = IDLE
+			else :
+				status = WALK
+	elif movement.y > 0 && status != ATACK && status != MORPH:
+		if status != FLY:
+			status = FALL
+		elif status == FLY && movement.y > 10 :
+			status = FALL
 	
 func getInput():
 	input_x = 0
@@ -46,16 +51,18 @@ func getInput():
 		movement.x = lerp(movement.x,0, 0.2)
 	
 func flip() :
-	if input_x > 0 :
-		$AnimatedSprite.flip_h = false
-	elif input_x < 0 :
-		$AnimatedSprite.flip_h = true
+	if status != DEFENSE && status != MORPH:
+		if input_x > 0 :
+			$AnimatedSprite.flip_h = false
+		elif input_x < 0 :
+			$AnimatedSprite.flip_h = true
 		
 func walk():
-	movement = move_and_slide(movement, Vector2(0,-1))
+	if status != DEFENSE && status != MORPH:
+		movement = move_and_slide(movement, Vector2(0,-1))
 
 func jumpPress():
-	if Input.is_action_just_pressed("ui_jump") :
+	if Input.is_action_just_pressed("ui_jump") && status != DEFENSE && status != ATACK && status != MORPH:
 		# pulo extra
 		if (status == JUMP || status == FALL) && current_jump <= total_extra_jumps :
 			jump(MAX_JUMP_FORCE)
@@ -79,3 +86,19 @@ func fly():
 		if status != JUMP && (total_extra_jumps == 0  || current_jump > total_extra_jumps) :
 			movement.y = -MIN_JUMP_FORCE
 			status = FLY
+			
+func defense():
+	if Input.is_action_pressed("ui_defense") :
+		if is_on_floor() && status != ATACK && status != MORPH:
+			status = DEFENSE
+			
+	if Input.is_action_just_released("ui_defense") && status == DEFENSE:
+		status = IDLE
+		movement.x = 0
+		
+func atack():
+	pass
+	
+func morph():
+	if Input.is_action_pressed("ui_morph") && status != ATACK:
+		status = MORPH
