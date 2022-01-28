@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg-acidocean.png-80e83794ccb9f07c561558d56574c28b.stex"
+path="res://.import/hud-egobar-star.png-69977e9f00ced4ba1ef2a4043b6bcbc2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bg-acidocean.png"
-dest_files=[ "res://.import/bg-acidocean.png-80e83794ccb9f07c561558d56574c28b.stex" ]
+source_file="res://sprites/hud/hud-egobar-star.png"
+dest_files=[ "res://.import/hud-egobar-star.png-69977e9f00ced4ba1ef2a4043b6bcbc2.stex" ]
 
 [params]
 

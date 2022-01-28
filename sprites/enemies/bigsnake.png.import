@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chao.png-e3fc67df7f36d79dd91df73398c2be44.stex"
+path="res://.import/bigsnake.png-a7c0291a242cffe824dbdfa2b789f08b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/chao.png"
-dest_files=[ "res://.import/chao.png-e3fc67df7f36d79dd91df73398c2be44.stex" ]
+source_file="res://sprites/enemies/bigsnake.png"
+dest_files=[ "res://.import/bigsnake.png-a7c0291a242cffe824dbdfa2b789f08b.stex" ]
 
 [params]
 

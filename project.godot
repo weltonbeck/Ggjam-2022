@@ -20,10 +20,10 @@ GameControl="*res://scennes/game_control.tscn"
 
 [display]
 
-window/size/width=480
-window/size/height=270
-window/size/test_width=480
-window/size/test_height=270
+window/size/width=512
+window/size/height=288
+window/size/test_width=512
+window/size/test_height=288
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -82,6 +82,7 @@ ui_morph={
 2d_physics/layer_1="Personagens"
 2d_physics/layer_2="Chão"
 2d_physics/layer_3="Inimigos"
+2d_physics/layer_4="Bloco"
 
 [physics]
 

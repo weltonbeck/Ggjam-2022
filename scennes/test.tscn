@@ -1,35 +1,102 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://sprites/bg-acidocean.png" type="Texture" id=1]
-[ext_resource path="res://scennes/chao.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scennes/enemies/spike_factor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scennes/tilemap.tres" type="TileSet" id=2]
 [ext_resource path="res://scennes/players/player_owl.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scennes/enemies/enemy_rat.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scennes/others/path_diamont.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scennes/others/barrier.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scennes/enemies/enemy_cat.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scennes/enemies/enemy_rat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scennes/enemies/spikeball.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scennes/levels/ocean/background_ocean.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scennes/tilemap_spikes.tres" type="TileSet" id=10]
+[ext_resource path="res://scennes/others/invisible_barrier.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 232, 28.1481, 0, 0, 0, 0, 360, 35.5556, 0, 0, 0, 0, 384, 94.8148, 0, 0, 0, 0, 496, 109.63 )
+}
 
 [node name="Test" type="Node2D"]
 
-[node name="SpriteBackground" type="Sprite" parent="."]
-position = Vector2( 240, 135 )
-z_index = -3
-texture = ExtResource( 1 )
+[node name="InvisibleBarrier3" parent="." instance=ExtResource( 11 )]
+position = Vector2( -16, 144 )
+scale = Vector2( 5, 20 )
 
-[node name="chao" parent="." instance=ExtResource( 2 )]
-position = Vector2( 229, 263 )
-scale = Vector2( 9.76936, 0.28 )
+[node name="InvisibleBarrier2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 728, 8 )
+scale = Vector2( 25, 3.52 )
 
-[node name="chao2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 250, 12 )
-scale = Vector2( 10.9114, -0.504851 )
+[node name="InvisibleBarrier" parent="." instance=ExtResource( 11 )]
+position = Vector2( 256, -32 )
+scale = Vector2( 30, 1 )
 
-[node name="chao3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 235, 249 )
-scale = Vector2( 1.01278, 1.43559 )
+[node name="TileMapSpike" type="TileMap" parent="."]
+tile_set = ExtResource( 10 )
+collision_layer = 4
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65536, 0, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 0, 0, 0, 3, 0, 7, 5, 0, 8, 6, 0, 9, 6, 0, 10, 6, 0, 11, 6, 0, 12, 6, 0, 13, 6, 0, 65536, 3, 0, 131072, 3, 0, 196608, 3, 0, 262144, 3, 0, 327680, 3, 0 )
 
-[node name="EnemyRat" parent="." instance=ExtResource( 4 )]
-position = Vector2( 335, 226 )
+[node name="TileMapBackground" type="TileMap" parent="."]
+modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
+position = Vector2( 0, 79 )
+tile_set = ExtResource( 2 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65550, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 196629, 0, 0, 262160, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 393231, 0, 0, 393232, 0, 0, 524306, 0, 0 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, 79 )
+tile_set = ExtResource( 2 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 65558, 0, 0, 131080, 1, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 196611, 1, 0, 196615, 1, 0, 196616, 0, 0, 196617, 1, 0, 196629, 0, 0, 196630, 0, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 0, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 1, 0, 262166, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 0, 0, 327702, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393233, 1, 0, 393234, 1, 0, 393235, 1, 0, 393236, 1, 0, 393237, 1, 0, 393238, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 1, 0, 458768, 1, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0 )
+
+[node name="EnemyRat" parent="." instance=ExtResource( 7 )]
+position = Vector2( 424, 311 )
+
+[node name="Spikeball" parent="." instance=ExtResource( 8 )]
+position = Vector2( 352, 135 )
 
 [node name="PlayerOwl" parent="." instance=ExtResource( 3 )]
-position = Vector2( 146, 228 )
+position = Vector2( 224, 247 )
 
-[node name="chao4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 500, 254 )
-scale = Vector2( 0.92383, 0.994732 )
+[node name="Camera2D" type="Camera2D" parent="PlayerOwl"]
+current = true
+limit_left = 0
+limit_top = -32
+limit_smoothed = true
+
+[node name="Barrier2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 992, 239 )
+
+[node name="Barrier3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1120, 431 )
+
+[node name="Barrier" parent="." instance=ExtResource( 5 )]
+position = Vector2( 992, 303 )
+
+[node name="SpikeFactor" parent="." instance=ExtResource( 1 )]
+position = Vector2( 72, 303 )
+scale = Vector2( 1, 1.08 )
+size = 8
+
+[node name="PathDiamont" parent="." instance=ExtResource( 4 )]
+position = Vector2( 312, 104.6 )
+curve = SubResource( 1 )
+
+[node name="Background" parent="." instance=ExtResource( 9 )]
+
+[node name="EnemyCat" parent="." instance=ExtResource( 6 )]
+position = Vector2( 872, 368 )
+
+[connection signal="body_entered" from="PathDiamont/Diamont8" to="PathDiamont/Diamont8" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont9" to="PathDiamont/Diamont9" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont10" to="PathDiamont/Diamont10" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont11" to="PathDiamont/Diamont11" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont12" to="PathDiamont/Diamont12" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont13" to="PathDiamont/Diamont13" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont14" to="PathDiamont/Diamont14" method="_on_diamont_body_entered"]
