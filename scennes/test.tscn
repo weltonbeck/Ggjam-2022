@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scennes/enemies/spike_factor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scennes/tilemap.tres" type="TileSet" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://scennes/levels/ocean/background_ocean.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scennes/tilemap_spikes.tres" type="TileSet" id=10]
 [ext_resource path="res://scennes/others/invisible_barrier.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scennes/enemies/snake.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -41,6 +42,7 @@ tile_data = PoolIntArray( -65536, 0, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0
 [node name="TileMapBackground" type="TileMap" parent="."]
 modulate = Color( 0.513726, 0.52549, 0.576471, 1 )
 position = Vector2( 0, 79 )
+z_index = -1
 tile_set = ExtResource( 2 )
 collision_layer = 0
 collision_mask = 0
@@ -93,10 +95,23 @@ curve = SubResource( 1 )
 [node name="EnemyCat" parent="." instance=ExtResource( 6 )]
 position = Vector2( 872, 368 )
 
-[connection signal="body_entered" from="PathDiamont/Diamont8" to="PathDiamont/Diamont8" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="PathDiamont/Diamont9" to="PathDiamont/Diamont9" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="PathDiamont/Diamont10" to="PathDiamont/Diamont10" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="PathDiamont/Diamont11" to="PathDiamont/Diamont11" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="PathDiamont/Diamont12" to="PathDiamont/Diamont12" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="PathDiamont/Diamont13" to="PathDiamont/Diamont13" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="PathDiamont/Diamont14" to="PathDiamont/Diamont14" method="_on_diamont_body_entered"]
+[node name="Snake" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1027, 528 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Snake2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 958, 466 )
+rotation = 1.57079
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Snake3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 641, 77 )
+rotation = 3.14159
+
+[connection signal="body_entered" from="PathDiamont/Diamont" to="PathDiamont/Diamont" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont2" to="PathDiamont/Diamont2" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont3" to="PathDiamont/Diamont3" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont4" to="PathDiamont/Diamont4" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont5" to="PathDiamont/Diamont5" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont6" to="PathDiamont/Diamont6" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont7" to="PathDiamont/Diamont7" method="_on_diamont_body_entered"]
