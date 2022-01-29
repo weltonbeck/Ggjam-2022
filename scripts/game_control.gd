@@ -79,9 +79,9 @@ func resetHud(all = false) :
 	renderEgo()
 	
 func restoreLife() :
-	life = max_life
-#	if life > max_life :
-#		life = max_life
+	life +1
+	if life > max_life :
+		life = max_life
 	renderHearts()
 	
 func takeDamage() :
