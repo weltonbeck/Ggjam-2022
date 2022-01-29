@@ -14,7 +14,7 @@ motion_offset = Vector2( 0, -144 )
 motion_mirroring = Vector2( 512, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 240, 135 )
+position = Vector2( 256, 144 )
 texture = ExtResource( 1 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -23,7 +23,7 @@ motion_offset = Vector2( 0, -144 )
 motion_mirroring = Vector2( 512, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 240, 135 )
+position = Vector2( 256, 144 )
 texture = ExtResource( 3 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -33,5 +33,5 @@ motion_offset = Vector2( 0, -144 )
 motion_mirroring = Vector2( 512, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 240, 135 )
+position = Vector2( 256, 144 )
 texture = ExtResource( 2 )

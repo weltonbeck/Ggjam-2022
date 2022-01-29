@@ -19,32 +19,37 @@ script = ExtResource( 1 )
 
 [node name="HudCanvas" type="CanvasLayer" parent="."]
 
-[node name="Diamonts" type="Node2D" parent="HudCanvas"]
-position = Vector2( 0, 20 )
+[node name="Hud" type="Node2D" parent="HudCanvas"]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HudCanvas/Diamonts"]
-margin_left = 407.0
-margin_top = -11.0
-margin_right = 473.0
-margin_bottom = 13.0
-custom_colors/default_color = Color( 1, 1, 1, 1 )
-custom_fonts/normal_font = SubResource( 1 )
-text = "000 x"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Hearts" type="Node2D" parent="HudCanvas/Hud"]
+position = Vector2( 20, 20 )
 
-[node name="Sprite" type="Sprite" parent="HudCanvas/Diamonts"]
-position = Vector2( 480, 0 )
-texture = ExtResource( 4 )
+[node name="Sprite" type="Sprite" parent="HudCanvas/Hud/Hearts"]
+texture = ExtResource( 2 )
 
-[node name="EgoBar" type="Node2D" parent="HudCanvas"]
+[node name="Sprite2" type="Sprite" parent="HudCanvas/Hud/Hearts"]
+position = Vector2( 25, 0 )
+texture = ExtResource( 2 )
 
-[node name="EmptyBar" type="Sprite" parent="HudCanvas/EgoBar"]
+[node name="Sprite3" type="Sprite" parent="HudCanvas/Hud/Hearts"]
+position = Vector2( 50, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="HudCanvas/Hud/Hearts"]
+position = Vector2( 75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="HudCanvas/Hud/Hearts"]
+position = Vector2( 100, 0 )
+texture = ExtResource( 3 )
+
+[node name="EgoBar" type="Node2D" parent="HudCanvas/Hud"]
+
+[node name="EmptyBar" type="Sprite" parent="HudCanvas/Hud/EgoBar"]
 position = Vector2( 256, 265 )
 texture = ExtResource( 6 )
 
-[node name="CatColorRect" type="ColorRect" parent="HudCanvas/EgoBar"]
+[node name="CatColorRect" type="ColorRect" parent="HudCanvas/Hud/EgoBar"]
 margin_left = 255.0
 margin_top = 273.0
 margin_right = 414.0
@@ -56,7 +61,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OwlColorRect" type="ColorRect" parent="HudCanvas/EgoBar"]
+[node name="OwlColorRect" type="ColorRect" parent="HudCanvas/Hud/EgoBar"]
 margin_left = 257.0
 margin_top = 261.0
 margin_right = 416.0
@@ -67,36 +72,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FaceCat" type="Sprite" parent="HudCanvas/EgoBar"]
+[node name="FaceCat" type="Sprite" parent="HudCanvas/Hud/EgoBar"]
 position = Vector2( 256, 265 )
 texture = ExtResource( 9 )
 
-[node name="FaceOwl" type="Sprite" parent="HudCanvas/EgoBar"]
+[node name="FaceOwl" type="Sprite" parent="HudCanvas/Hud/EgoBar"]
 position = Vector2( 256, 265 )
 texture = ExtResource( 8 )
 
-[node name="Star" type="Sprite" parent="HudCanvas/EgoBar"]
+[node name="Star" type="Sprite" parent="HudCanvas/Hud/EgoBar"]
 position = Vector2( 256, 265 )
 texture = ExtResource( 7 )
 
-[node name="Hearts" type="Node2D" parent="HudCanvas"]
-position = Vector2( 20, 20 )
+[node name="Diamonts" type="Node2D" parent="HudCanvas/Hud"]
+position = Vector2( 0, 20 )
 
-[node name="Sprite" type="Sprite" parent="HudCanvas/Hearts"]
-texture = ExtResource( 2 )
+[node name="RichTextLabel" type="RichTextLabel" parent="HudCanvas/Hud/Diamonts"]
+margin_left = 407.0
+margin_top = -11.0
+margin_right = 473.0
+margin_bottom = 13.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "000 x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Sprite2" type="Sprite" parent="HudCanvas/Hearts"]
-position = Vector2( 25, 0 )
-texture = ExtResource( 2 )
-
-[node name="Sprite3" type="Sprite" parent="HudCanvas/Hearts"]
-position = Vector2( 50, 0 )
-texture = ExtResource( 2 )
-
-[node name="Sprite4" type="Sprite" parent="HudCanvas/Hearts"]
-position = Vector2( 75, 0 )
-texture = ExtResource( 3 )
-
-[node name="Sprite5" type="Sprite" parent="HudCanvas/Hearts"]
-position = Vector2( 100, 0 )
-texture = ExtResource( 3 )
+[node name="Sprite" type="Sprite" parent="HudCanvas/Hud/Diamonts"]
+position = Vector2( 480, 0 )
+texture = ExtResource( 4 )

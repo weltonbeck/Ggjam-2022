@@ -1,36 +1,39 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scennes/players/player_owl.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scennes/others/player_respawn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scennes/others/barrier.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scennes/levels/cave/background_cave.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scennes/others/level_end.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scennes/tilemap.tres" type="TileSet" id=5]
+[ext_resource path="res://scennes/enemies/enemy_cat.tscn" type="PackedScene" id=6]
 
-[node name="Level_2" type="Node2D"]
+[node name="Level_2" type="Node2D" groups=["Level"]]
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="LevelEnd" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1104, 224 )
+level_number = 3
 
 [node name="TileMapPlatform" type="TileMap" parent="."]
 tile_set = ExtResource( 5 )
 collision_layer = 2
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, -65519, 4, 0, 65535, 4, 0, 0, 4, 0, 1, 4, 0, 2, 4, 0, 8, 4, 0, 9, 4, 0, 10, 4, 0, 11, 4, 0, 12, 4, 0, 13, 4, 0, 14, 4, 0, 15, 4, 0, 16, 4, 0, 17, 4, 0, 131071, 4, 0, 65536, 4, 0, 65548, 4, 0, 65549, 4, 0, 65550, 4, 0, 65551, 4, 0, 65552, 4, 0, 65553, 4, 0, 196607, 4, 0, 131076, 4, 0, 131077, 4, 0, 131078, 4, 0, 131085, 4, 0, 262143, 4, 0, 327679, 4, 0, 262154, 5, 0, 262155, 5, 0, 262160, 5, 0, 262161, 5, 0, 393215, 4, 0, 327680, 5, 0, 327681, 5, 0, 327682, 5, 0, 327683, 5, 0, 327684, 5, 0, 327687, 5, 0, 327688, 5, 0, 327689, 5, 0, 327690, 4, 0, 327691, 4, 0, 327696, 4, 0, 327697, 4, 0, 458751, 4, 0, 393216, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 5, 0, 393222, 5, 0, 393223, 4, 0, 393224, 4, 0, 393225, 4, 0, 393226, 4, 0, 393227, 4, 0, 393228, 5, 0, 393229, 5, 0, 393230, 5, 0, 393231, 5, 0, 393232, 4, 0, 393233, 4, 0, 524287, 4, 0, 458752, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 458760, 4, 0, 458761, 4, 0, 458762, 4, 0, 458763, 4, 0, 458764, 4, 0, 458765, 4, 0, 458766, 4, 0, 458767, 4, 0, 458768, 4, 0, 458769, 4, 0 )
+tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, -65519, 4, 0, -65518, 4, 0, -65517, 4, 0, 65535, 4, 0, 0, 4, 0, 1, 4, 0, 2, 4, 0, 8, 4, 0, 9, 4, 0, 10, 4, 0, 11, 4, 0, 12, 4, 0, 13, 4, 0, 14, 4, 0, 15, 4, 0, 16, 4, 0, 17, 4, 0, 18, 4, 0, 19, 4, 0, 20, 4, 0, 131071, 4, 0, 65536, 4, 0, 65547, 4, 0, 65548, 4, 0, 65549, 4, 0, 65550, 4, 0, 65551, 4, 0, 65552, 4, 0, 65553, 4, 0, 65554, 4, 0, 65555, 4, 0, 65556, 4, 0, 196607, 4, 0, 131076, 4, 0, 131077, 4, 0, 131078, 4, 0, 131085, 4, 0, 131091, 4, 0, 131092, 4, 0, 262143, 4, 0, 196627, 4, 0, 196628, 4, 0, 327679, 4, 0, 262154, 5, 0, 262155, 5, 0, 262160, 5, 0, 262161, 4, 0, 262162, 4, 0, 262163, 4, 0, 262164, 4, 0, 393215, 4, 0, 327680, 5, 0, 327681, 5, 0, 327682, 5, 0, 327683, 5, 0, 327684, 5, 0, 327689, 5, 0, 327690, 4, 0, 327691, 4, 0, 327696, 4, 0, 327697, 4, 0, 327698, 4, 0, 327699, 4, 0, 327700, 4, 0, 458751, 4, 0, 393216, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 5, 0, 393222, 5, 0, 393223, 5, 0, 393224, 5, 0, 393225, 4, 0, 393226, 4, 0, 393227, 4, 0, 393228, 5, 0, 393229, 5, 0, 393230, 5, 0, 393231, 5, 0, 393232, 4, 0, 393233, 4, 0, 393234, 4, 0, 393235, 4, 0, 393236, 4, 0, 524287, 4, 0, 458752, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 458760, 4, 0, 458761, 4, 0, 458762, 4, 0, 458763, 4, 0, 458764, 4, 0, 458765, 4, 0, 458766, 4, 0, 458767, 4, 0, 458768, 4, 0, 458769, 4, 0, 458770, 4, 0, 458771, 4, 0 )
+
+[node name="EnemyCat" parent="TileMapPlatform" instance=ExtResource( 6 )]
+position = Vector2( 544, 352 )
 
 [node name="Enemies" type="Node2D" parent="."]
-
-[node name="PlayerOwl" parent="." instance=ExtResource( 1 )]
-position = Vector2( 38, 297 )
-
-[node name="Camera2D" type="Camera2D" parent="PlayerOwl"]
-current = true
-limit_left = 0
-limit_top = -32
-limit_smoothed = true
 
 [node name="Barriers" type="Node2D" parent="."]
 
 [node name="Barrier" parent="Barriers" instance=ExtResource( 2 )]
-position = Vector2( 1120, 224 )
+position = Vector2( 736, 224 )
 
 [node name="Barrier2" parent="Barriers" instance=ExtResource( 2 )]
-position = Vector2( 1120, 160 )
+position = Vector2( 736, 160 )
+
+[node name="PlayerRespawn" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 304 )

@@ -1,5 +1,13 @@
 extends Node2D
 
+var all_levels = [
+	"res://scennes/levels/florest/level_1.tscn",
+	"res://scennes/levels/cave/level_2.tscn",
+	"res://scennes/levels/ocean/level_3.tscn"
+]
+
+var main_scenne = "res://scennes/levels/tela_selecao.tscn"
+
 var player_cat = preload("res://scennes/players/player_cat.tscn")
 var player_owl = preload("res://scennes/players/player_owl.tscn")
 
@@ -15,9 +23,55 @@ var cat_ego = 50
 var owl_ego = 50
 var ego_price = 5
 
+var last_hero = "cat"
+
 func _ready():
+	resetHud()
+	hideHud()
+
+
+func changeLevel(index):
+	if all_levels.size() > index - 1:
+		if index == 1 :
+			resetHud(true)
+		else :
+			resetHud()
+		showHud()
+		get_tree().change_scene(all_levels[index - 1])
+		yield(get_tree().create_timer(0.1), "timeout")
+		var player_respawn = get_tree().get_nodes_in_group("PlayerRespawn")
+		invokePlayer(last_hero, player_respawn[0].global_position)
+	else :
+		changeScenneMain()
+		
+func changeScenneMain():
+	hideHud()
+	get_tree().change_scene(main_scenne)
+	
+func changeScenneCredits():
+	hideHud()
+	get_tree().change_scene("res://scennes/levels/tela_credito.tscn")
+	
+func showHud() :
+	$HudCanvas/Hud.visible = true
+
+func hideHud() :
+	$HudCanvas/Hud.visible = false
+	
+func resetHud(all = false) :
+	if all :
+		cat_ego = 50
+		owl_ego = 50
+		life = 5
+	total_diamonts = 0
 	renderHearts()
 	renderEgo()
+	
+func restoreLife() :
+	life += 1
+	if life > max_life :
+		life = max_life
+	renderHearts()
 	
 func takeDamage() :
 	if life > 0 :
@@ -27,11 +81,11 @@ func takeDamage() :
 		print("Game over")
 	
 func renderHearts() :
-	for i in range($HudCanvas/Hearts.get_child_count()):
+	for i in range($HudCanvas/Hud/Hearts.get_child_count()):
 		if i >= life :
-			$HudCanvas/Hearts.get_child(i).set_texture(heart_off)
+			$HudCanvas/Hud/Hearts.get_child(i).set_texture(heart_off)
 		else :
-			$HudCanvas/Hearts.get_child(i).set_texture(heart_on)
+			$HudCanvas/Hud/Hearts.get_child(i).set_texture(heart_on)
 
 func changeEgo(hero, price = 0):
 	if price <= 0 :
@@ -50,24 +104,22 @@ func changeEgo(hero, price = 0):
 	renderEgo()
 
 func renderEgo() :
-	$HudCanvas/EgoBar/CatColorRect.rect_scale.x = cat_ego / max_ego
-	$HudCanvas/EgoBar/OwlColorRect.rect_scale.x = owl_ego / max_ego
+	$HudCanvas/Hud/EgoBar/CatColorRect.rect_scale.x = cat_ego / max_ego
+	$HudCanvas/Hud/EgoBar/OwlColorRect.rect_scale.x = owl_ego / max_ego
 	
-func changePlayer(old_player, type, position):
+func invokePlayer(type, position):
+	last_hero = type
 	var player
 	if type == "cat" :
 		player = player_cat.instance()
 	else :
 		player = player_owl.instance()
 	player.global_position = position
-	get_parent().add_child(player)
-	var camera = old_player.get_node("Camera2D")
-	if camera :
-		old_player.remove_child(camera)
-		player.add_child(camera)
-	old_player.queue_free()
+	var level = get_tree().get_nodes_in_group("Level")
+	if level :
+		level[0].add_child(player)
 
 
 func getDiamont() :
 	total_diamonts += 1
-	$HudCanvas/Diamonts/RichTextLabel.text = str(total_diamonts).pad_zeros(3) + " x "
+	$HudCanvas/Hud/Diamonts/RichTextLabel.text = str(total_diamonts).pad_zeros(3) + " x "

@@ -1,13 +1,22 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scennes/levels/florest/background_florest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scennes/tilemap.tres" type="TileSet" id=2]
 [ext_resource path="res://scennes/tilemap_spikes.tres" type="TileSet" id=3]
-[ext_resource path="res://scennes/players/player_owl.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scennes/others/player_respawn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scennes/others/barrier.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scennes/others/invisible_barrier.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scennes/enemies/enemy_rat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scennes/others/fruit.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scennes/others/level_end.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scennes/others/path_diamont.tscn" type="PackedScene" id=10]
 
-[node name="Level_1" type="Node2D"]
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 280, 344.815, 0, 0, 0, 0, 354, 345.741, 0, 0, 0, 0, 351, 272.593, 0, 0, 0, 0, 414, 273.519, 0, 0, 0, 0, 413, 222.593, 0, 0, 0, 0, 519, 223.519 )
+}
+
+[node name="Level_1" type="Node2D" groups=["Level"]]
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 
@@ -38,20 +47,43 @@ tile_set = ExtResource( 2 )
 collision_layer = 2
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 131090, 3, 0, 131091, 3, 0, 196625, 3, 0, 196626, 2, 0, 196627, 2, 0, 262151, 3, 0, 262152, 3, 0, 262160, 3, 0, 262161, 2, 0, 262162, 2, 0, 262163, 2, 0, 327680, 3, 0, 327686, 3, 0, 327687, 2, 0, 327688, 2, 0, 327689, 3, 0, 327690, 3, 0, 327696, 2, 0, 327697, 2, 0, 327698, 2, 0, 327699, 2, 0, 393216, 2, 0, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0, 393231, 3, 0, 393232, 2, 0, 393233, 2, 0, 393234, 2, 0, 393235, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 458765, 2, 0, 458766, 2, 0, 458767, 2, 0, 458768, 2, 0, 458769, 2, 0, 458770, 2, 0, 458771, 2, 0 )
+tile_data = PoolIntArray( 65561, 3, 0, 131090, 3, 0, 131091, 3, 0, 131097, 2, 0, 196625, 3, 0, 196626, 2, 0, 196627, 2, 0, 196633, 2, 0, 262151, 3, 0, 262152, 3, 0, 262160, 3, 0, 262161, 2, 0, 262162, 2, 0, 262163, 2, 0, 262169, 2, 0, 327680, 3, 0, 327686, 3, 0, 327687, 2, 0, 327688, 2, 0, 327689, 3, 0, 327690, 3, 0, 327697, 2, 0, 327698, 2, 0, 327699, 2, 0, 327700, 3, 0, 327701, 3, 0, 327702, 3, 0, 327703, 3, 0, 327704, 3, 0, 327705, 2, 0, 393216, 2, 0, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0, 393231, 3, 0, 393232, 3, 0, 393233, 2, 0, 393234, 2, 0, 393235, 2, 0, 393236, 2, 0, 393237, 2, 0, 393238, 2, 0, 393239, 2, 0, 393240, 2, 0, 393241, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 458765, 2, 0, 458766, 2, 0, 458767, 2, 0, 458768, 2, 0, 458769, 2, 0, 458770, 2, 0, 458771, 2, 0, 458772, 2, 0, 458773, 2, 0, 458774, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="PlayerOwl" parent="." instance=ExtResource( 4 )]
-position = Vector2( 38, 297 )
-
-[node name="Camera2D" type="Camera2D" parent="PlayerOwl"]
-current = true
-limit_left = 0
-limit_top = -32
-limit_smoothed = true
+[node name="EnemyRat" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 936, 359 )
 
 [node name="Barriers" type="Node2D" parent="."]
 
 [node name="Barrier" parent="Barriers" instance=ExtResource( 5 )]
 position = Vector2( 992, 352 )
+
+[node name="LevelEnd" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1488, 288 )
+level_number = 2
+
+[node name="PlayerRespawn" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 368 )
+
+[node name="Collectables" type="Node2D" parent="."]
+position = Vector2( 1.90735e-06, -22.4 )
+scale = Vector2( 1, 1.08 )
+
+[node name="PathDiamont" parent="Collectables" instance=ExtResource( 10 )]
+position = Vector2( 0, 0 )
+scale = Vector2( 1, 1 )
+curve = SubResource( 1 )
+
+[node name="Fruit" parent="Collectables" instance=ExtResource( 8 )]
+position = Vector2( 1058, 345.741 )
+scale = Vector2( 1, 0.925926 )
+
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont" to="Collectables/PathDiamont/Diamont" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont2" to="Collectables/PathDiamont/Diamont2" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont5" to="Collectables/PathDiamont/Diamont5" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont7" to="Collectables/PathDiamont/Diamont7" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont8" to="Collectables/PathDiamont/Diamont8" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont11" to="Collectables/PathDiamont/Diamont11" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont13" to="Collectables/PathDiamont/Diamont13" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont16" to="Collectables/PathDiamont/Diamont16" method="_on_diamont_body_entered"]

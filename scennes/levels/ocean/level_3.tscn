@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scennes/players/player_owl.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scennes/others/player_respawn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scennes/others/barrier.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scennes/levels/ocean/background_ocean.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scennes/tilemap.tres" type="TileSet" id=4]
 [ext_resource path="res://scennes/others/invisible_barrier.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scennes/others/level_end.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scennes/enemies/snake.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scennes/enemies/spike_factor.tscn" type="PackedScene" id=8]
 
-[node name="Level_3" type="Node2D"]
+[node name="Level_3" type="Node2D" groups=["Level"]]
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
@@ -15,18 +18,16 @@ tile_set = ExtResource( 4 )
 collision_layer = 2
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 196624, 1, 0, 196625, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262159, 1, 0, 262160, 0, 0, 262161, 0, 0, 327680, 1, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0 )
+tile_data = PoolIntArray( -65517, 0, 0, -65516, 0, 0, 19, 0, 0, 20, 0, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65555, 0, 0, 65556, 0, 0, 131091, 0, 0, 131092, 0, 0, 196624, 1, 0, 196625, 1, 0, 196626, 1, 0, 196627, 0, 0, 196628, 0, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262159, 1, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 327680, 1, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="PlayerOwl" parent="." instance=ExtResource( 1 )]
-position = Vector2( 38, 297 )
+[node name="SpikeFactor" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 312, 224 )
+size = 10
 
-[node name="Camera2D" type="Camera2D" parent="PlayerOwl"]
-current = true
-limit_left = 0
-limit_top = -32
-limit_smoothed = true
+[node name="Snake" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 232, 320 )
 
 [node name="Barriers" type="Node2D" parent="."]
 
@@ -46,3 +47,10 @@ scale = Vector2( -3.07285, 16.7507 )
 [node name="InvisibleBarrier2" parent="InvisibleBlock" instance=ExtResource( 5 )]
 position = Vector2( -400, -400 )
 scale = Vector2( 60, 5 )
+
+[node name="LevelEnd" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1104, 160 )
+level_number = 4
+
+[node name="PlayerRespawn" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 304 )

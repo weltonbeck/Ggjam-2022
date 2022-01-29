@@ -62,7 +62,10 @@ func atack():
 
 func animation():
 	if status == IDLE:
-		$AnimatedSprite.play("Stand")
+		if (GameControl.cat_ego > 0) :
+			$AnimatedSprite.play("Stand")
+		else :
+			$AnimatedSprite.play("Tired")
 	elif status == WALK:
 		$AnimatedSprite.play("Walk")
 	elif status == JUMP:
@@ -78,7 +81,8 @@ func animation():
 		if old_status != MORPH :
 			$AnimatedSprite.play("Morph")
 			yield($AnimatedSprite, "animation_finished")
-			GameControl.changePlayer(self, "owl",global_position)
+			GameControl.invokePlayer("owl",global_position)
+			queue_free()
 
 
 func _on_hit_body_entered(body):

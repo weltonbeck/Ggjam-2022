@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://sprites/item-score.png" type="Texture" id=1]
+[ext_resource path="res://sprites/others/item-score.png" type="Texture" id=1]
 [ext_resource path="res://scripts/diamont.gd" type="Script" id=2]
 [ext_resource path="res://sprites/effects/pickup1.png" type="Texture" id=3]
 
