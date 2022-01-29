@@ -18,3 +18,7 @@ func _on_bullet_body_entered(body):
 	explosion.global_position = global_position
 	get_parent().add_child(explosion)
 	queue_free()
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
