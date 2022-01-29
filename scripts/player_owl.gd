@@ -28,6 +28,11 @@ func _physics_process(_delta):
 		$AtackPosition.position.x = 15
 	elif input_x < 0 :
 		$AtackPosition.position.x = -15
+		
+	if intangible == true :
+		$HitArea.monitoring = false
+	else :
+		$HitArea.monitoring = true
 
 func atack():
 	if Input.is_action_just_pressed("ui_atack") && status != DEFENSE && status != MORPH && status != ATACK && status != HIT:
@@ -69,6 +74,7 @@ func animation():
 
 func _on_hit_body_entered(body):
 	if status != ATACK && intangible == false:
+		GameControl.takeDamage()
 		intangible = true
 		status = HIT
 		$AnimatedSprite.play("Hit")

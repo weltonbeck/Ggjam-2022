@@ -108,10 +108,10 @@ scale = Vector2( 0.25, 0.25 )
 position = Vector2( 641, 77 )
 rotation = 3.14159
 
-[connection signal="body_entered" from="PathDiamont/Diamont" to="PathDiamont/Diamont" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="PathDiamont/Diamont2" to="PathDiamont/Diamont2" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="PathDiamont/Diamont3" to="PathDiamont/Diamont3" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="PathDiamont/Diamont4" to="PathDiamont/Diamont4" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="PathDiamont/Diamont5" to="PathDiamont/Diamont5" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="PathDiamont/Diamont6" to="PathDiamont/Diamont6" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="PathDiamont/Diamont7" to="PathDiamont/Diamont7" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont8" to="PathDiamont/Diamont8" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont9" to="PathDiamont/Diamont9" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont10" to="PathDiamont/Diamont10" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont11" to="PathDiamont/Diamont11" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont12" to="PathDiamont/Diamont12" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont13" to="PathDiamont/Diamont13" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="PathDiamont/Diamont14" to="PathDiamont/Diamont14" method="_on_diamont_body_entered"]
