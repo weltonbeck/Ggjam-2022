@@ -2,7 +2,7 @@ extends KinematicBody2D
 	
 const MAX_SPEED = 170
 var GRAVITY = 20
-const MAX_JUMP_FORCE = 420
+const MAX_JUMP_FORCE = 500
 const MIN_JUMP_FORCE = 100
 export(int) var total_extra_jumps = 0
 var current_jump = 0

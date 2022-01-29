@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/morph.wav-fabde41c77bc415baaf240800abef1d8.sample"
+
+[deps]
+
+source_file="res://samples/morph.wav"
+dest_files=[ "res://.import/morph.wav-fabde41c77bc415baaf240800abef1d8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

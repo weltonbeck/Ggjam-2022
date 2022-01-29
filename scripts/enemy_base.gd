@@ -39,10 +39,12 @@ func flip() :
 func takeDamage(value):
 	life = life - value
 	if life <= 0 :
+		$AudioDeath.play()
 		$AnimatedSprite.play("Destroy")
 		yield($AnimatedSprite, "animation_finished")
 		queue_free()
 	else :
+		$AudioHit.play()
 		walk = false
 		var t = get_tree().create_timer(0.5)
 		$AnimatedSprite.playing = false

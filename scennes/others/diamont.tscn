@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://sprites/others/item-score.png" type="Texture" id=1]
 [ext_resource path="res://scripts/diamont.gd" type="Script" id=2]
 [ext_resource path="res://sprites/effects/pickup1.png" type="Texture" id=3]
+[ext_resource path="res://samples/coin.wav" type="AudioStream" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -67,10 +68,14 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 6 )
+
+[node name="AudioCoin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+bus = "FX"
 
 [connection signal="body_entered" from="." to="." method="_on_diamont_body_entered"]

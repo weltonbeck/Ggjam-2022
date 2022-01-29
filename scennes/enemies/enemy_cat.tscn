@@ -1,8 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/enemy_base.gd" type="Script" id=1]
 [ext_resource path="res://sprites/enemies/foes-gato.png" type="Texture" id=2]
 [ext_resource path="res://sprites/effects/enemydead.png" type="Texture" id=3]
+[ext_resource path="res://samples/death.wav" type="AudioStream" id=4]
+[ext_resource path="res://samples/hit.wav" type="AudioStream" id=5]
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
@@ -74,9 +76,16 @@ life = 2
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Walk"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 2, 1 )
 shape = SubResource( 2 )
+
+[node name="AudioHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+bus = "FX"
+
+[node name="AudioDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+bus = "FX"

@@ -36,21 +36,32 @@ func changeLevel(index):
 			resetHud(true)
 		else :
 			resetHud()
+		
+		$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
+		yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 		showHud()
 		get_tree().change_scene(all_levels[index - 1])
 		yield(get_tree().create_timer(0.1), "timeout")
 		var player_respawn = get_tree().get_nodes_in_group("PlayerRespawn")
 		invokePlayer(last_hero, player_respawn[0].global_position)
+		$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
 	else :
 		changeScenneMain()
 		
 func changeScenneMain():
+	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
+	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 	hideHud()
 	get_tree().change_scene(main_scenne)
+	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
+	
 	
 func changeScenneCredits():
+	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
+	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 	hideHud()
 	get_tree().change_scene("res://scennes/levels/tela_credito.tscn")
+	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
 	
 func showHud() :
 	$HudCanvas/Hud.visible = true
@@ -68,9 +79,9 @@ func resetHud(all = false) :
 	renderEgo()
 	
 func restoreLife() :
-	life += 1
-	if life > max_life :
-		life = max_life
+	life = max_life
+#	if life > max_life :
+#		life = max_life
 	renderHearts()
 	
 func takeDamage() :

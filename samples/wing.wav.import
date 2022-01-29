@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/wing.wav-82f93d37d9280d70171c347ea9276df6.sample"
+
+[deps]
+
+source_file="res://samples/wing.wav"
+dest_files=[ "res://.import/wing.wav-82f93d37d9280d70171c347ea9276df6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
