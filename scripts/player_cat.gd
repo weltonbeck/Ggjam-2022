@@ -13,9 +13,12 @@ func _physics_process(_delta):
 	startPhysics()
 	getInput()
 	flip()
-	jumpPress()
-	defense()
-	atack()
+	if (GameControl.cat_ego > 0) :
+		jumpPress()
+		defense()
+		atack()
+	else :
+		movement.x = movement.x / 2
 	morph()
 	walk()
 	finishPhysics()
@@ -23,9 +26,13 @@ func _physics_process(_delta):
 	animation()
 	
 	if status == DEFENSE :
+		GameControl.changeEgo("cat", (GameControl.ego_price / 4) * _delta)
 		intangible = true
 	elif old_status == DEFENSE && status != DEFENSE :
 		intangible = false
+		
+	if old_status != JUMP && status == JUMP :	
+		GameControl.changeEgo("cat", (GameControl.ego_price / 2))
 	
 	old_status = status
 	
@@ -36,6 +43,7 @@ func _physics_process(_delta):
 
 func atack():
 	if Input.is_action_just_pressed("ui_atack") && status != DEFENSE && status != MORPH && status != ATACK:
+		GameControl.changeEgo("cat")
 		status = ATACK
 		if $AnimatedSprite.flip_h == true :
 			$AtackArea/CollisionShape2D.position.x = -9

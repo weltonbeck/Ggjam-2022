@@ -10,9 +10,14 @@ var total_diamonts = 0
 var max_life = 5
 var life = 5
 
+var max_ego = 100.0
+var cat_ego = 50
+var owl_ego = 50
+var ego_price = 5
+
 func _ready():
 	renderHearts()
-	pass
+	renderEgo()
 	
 func takeDamage() :
 	if life > 0 :
@@ -27,7 +32,26 @@ func renderHearts() :
 			$HudCanvas/Hearts.get_child(i).set_texture(heart_off)
 		else :
 			$HudCanvas/Hearts.get_child(i).set_texture(heart_on)
+
+func changeEgo(hero, price = 0):
+	if price <= 0 :
+		price = ego_price
+	if hero == "cat" && owl_ego < max_ego:
+		cat_ego -= price
+		owl_ego += price
+	elif  hero == "owl" && cat_ego < max_ego:
+		cat_ego += price
+		owl_ego -= price
 		
+	if owl_ego > max_ego :
+		owl_ego = max_ego
+	if cat_ego > max_ego :
+		cat_ego = max_ego
+	renderEgo()
+
+func renderEgo() :
+	$HudCanvas/EgoBar/CatColorRect.rect_scale.x = cat_ego / max_ego
+	$HudCanvas/EgoBar/OwlColorRect.rect_scale.x = owl_ego / max_ego
 	
 func changePlayer(old_player, type, position):
 	var player

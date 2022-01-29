@@ -13,16 +13,20 @@ func _physics_process(_delta):
 	startPhysics()
 	getInput()
 	flip()
-	fly()
+	if (GameControl.owl_ego > 0) :
+		fly()
+		atack()
+	morph()
 	if is_on_floor() :
 		movement.x = movement.x / 2
-	atack()
-	morph()
 	walk()
 	finishPhysics()
 	
 	animation()
 	old_status = status
+	
+	if status == FLY :
+		GameControl.changeEgo("owl", (GameControl.ego_price / 2) * _delta)
 	
 	if input_x > 0 :
 		$AtackPosition.position.x = 15
@@ -36,6 +40,7 @@ func _physics_process(_delta):
 
 func atack():
 	if Input.is_action_just_pressed("ui_atack") && status != DEFENSE && status != MORPH && status != ATACK && status != HIT:
+		GameControl.changeEgo("owl")
 		status = ATACK
 		var bullet = pre_bullet.instance()
 		bullet.global_position = $AtackPosition.global_position
