@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/Chocolate Bar Demo.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://sprites/cut/cut1.png" type="Texture" id=2]
+[ext_resource path="res://scripts/tela_selecao.gd" type="Script" id=3]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+outline_size = 3
+font_data = ExtResource( 1 )
+
+[node name="TelaGameOver" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="BtnVoltarLevel" type="Button" parent="."]
+margin_left = -60.0
+margin_top = 48.0
+margin_right = 60.0
+margin_bottom = 88.0
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Voltar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -128.0
+margin_top = -32.0
+margin_right = 135.0
+margin_bottom = 30.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[wave]GAME OVER[/wave]"
+text = "GAME OVER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="BtnVoltarLevel" to="." method="_on_BtnVoltarLevel_pressed"]

@@ -9,3 +9,7 @@ func _on_btnCredito_pressed():
 func _on_btnVoltar_pressed():
 	GameControl.changeScenneMain()
 
+
+
+func _on_BtnVoltarLevel_pressed():
+	GameControl.changeLevel(GameControl.last_level)

@@ -12,6 +12,7 @@ func _ready():
 	pass
 
 func _physics_process(_delta):
+	
 	startPhysics()
 	if !is_paused :
 		getInput()
@@ -29,7 +30,7 @@ func _physics_process(_delta):
 	animation()
 	
 	if status == DEFENSE :
-		GameControl.changeEgo("cat", (GameControl.ego_price / 4) * _delta)
+		GameControl.changeEgo("cat", (GameControl.ego_price / 3) * _delta)
 		intangible = true
 	elif old_status == DEFENSE && status != DEFENSE :
 		intangible = false
@@ -99,6 +100,8 @@ func _on_hit_body_entered(body):
 	if status != ATACK && intangible == false:
 		$AudioHit.play()
 		GameControl.takeDamage()
+		if GameControl.life <= 0 :
+			is_paused = true
 		intangible = true
 		status = HIT
 		$AnimatedSprite.play("Hit")

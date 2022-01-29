@@ -24,11 +24,11 @@ var owl_ego = 50
 var ego_price = 5
 
 var last_hero = "cat"
+var last_level = 1
 
 func _ready():
 	resetHud()
 	hideHud()
-
 
 func changeLevel(index):
 	if all_levels.size() > index - 1:
@@ -36,7 +36,7 @@ func changeLevel(index):
 			resetHud(true)
 		else :
 			resetHud()
-		
+		last_level = index
 		$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 		yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 		showHud()
@@ -55,12 +55,18 @@ func changeScenneMain():
 	get_tree().change_scene(main_scenne)
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
 	
-	
 func changeScenneCredits():
 	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 	hideHud()
 	get_tree().change_scene("res://scennes/levels/tela_credito.tscn")
+	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")	
+
+func changeGameover():
+	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
+	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
+	hideHud()
+	get_tree().change_scene("res://scennes/levels/tela_gameover.tscn")
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
 	
 func showHud() :
@@ -89,7 +95,7 @@ func takeDamage() :
 		life -= 1
 		renderHearts()
 	if life <= 0 :
-		print("Game over")
+		changeGameover()
 	
 func renderHearts() :
 	for i in range($HudCanvas/Hud/Hearts.get_child_count()):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scennes/others/player_respawn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scennes/others/barrier.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://scennes/enemies/enemy_rat.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scennes/enemies/enemy_cat.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scennes/enemies/bat.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scennes/others/death_area.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Curve2D" id=3]
 _data = {
@@ -163,8 +164,71 @@ position = Vector2( 928, 416 )
 [node name="Spikeball7" parent="Spikes" instance=ExtResource( 12 )]
 position = Vector2( 928, 480 )
 
+[node name="Spikeball8" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 7072, 544 )
+
 [node name="Spikeball4" parent="Spikes" instance=ExtResource( 12 )]
 position = Vector2( 4096, 32 )
+
+[node name="Spikeball9" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 6560, 160 )
+
+[node name="Spikeball10" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 6624, 160 )
+
+[node name="Spikeball11" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 6688, 160 )
+
+[node name="Spikeball12" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 6880, 32 )
+
+[node name="Spikeball22" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 5024, 288 )
+
+[node name="Spikeball13" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 6816, 96 )
+
+[node name="Spikeball14" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 6944, 96 )
+
+[node name="Spikeball20" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 7072, 32 )
+
+[node name="Spikeball21" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 7200, 32 )
+
+[node name="Spikeball15" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 7456, 32 )
+
+[node name="Spikeball16" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 7648, 96 )
+
+[node name="Spikeball17" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 7712, 160 )
+
+[node name="Spikeball18" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 7520, 96 )
+
+[node name="Spikeball19" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 7392, 96 )
+
+[node name="Spikeball23" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 2464, 96 )
+
+[node name="Spikeball24" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 2464, 32 )
+
+[node name="Spikeball25" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 1888, 32 )
+
+[node name="Spikeball26" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 1248, 32 )
+
+[node name="Spikeball27" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 1312, 96 )
+
+[node name="Spikeball28" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 544, 32 )
 
 [node name="Barriers" type="Node2D" parent="."]
 
@@ -404,6 +468,17 @@ fly_speed = 40
 position = Vector2( 3337, 29 )
 fly_range = 200
 fly_speed = 40
+
+[node name="DeathArea" type="Node2D" parent="."]
+position = Vector2( 32, 16 )
+
+[node name="DeathArea" parent="DeathArea" instance=ExtResource( 16 )]
+position = Vector2( 2368, 784 )
+scale = Vector2( 58.2424, 1.72618 )
+
+[node name="DeathArea2" parent="DeathArea" instance=ExtResource( 16 )]
+position = Vector2( 7336, 800 )
+scale = Vector2( 3, 1 )
 
 [connection signal="body_entered" from="collected/PathDiamont3/Diamont10" to="collected/PathDiamont3/Diamont10" method="_on_diamont_body_entered"]
 [connection signal="body_entered" from="collected/PathDiamont3/Diamont11" to="collected/PathDiamont3/Diamont11" method="_on_diamont_body_entered"]
