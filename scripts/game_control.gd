@@ -66,6 +66,14 @@ func changeScenneCredits():
 	get_tree().change_scene("res://scennes/levels/tela_credito.tscn")
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
 
+func changeGameStart():
+	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
+	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
+	resetHud()
+	hideHud()
+	get_tree().change_scene("res://scennes/levels/tela_historia.tscn")
+	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
+
 func changeGameover():
 	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")

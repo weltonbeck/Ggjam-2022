@@ -9,9 +9,9 @@
 [ext_resource path="res://sprites/cut/cena-final_anim/cena-final_frame5.png" type="Texture" id=7]
 [ext_resource path="res://sprites/cut/cena-final_anim/cena-final_frame8.png" type="Texture" id=8]
 [ext_resource path="res://sprites/hud/textbox.png" type="Texture" id=9]
-[ext_resource path="res://fonts/Chocolate Bar Demo.otf" type="DynamicFontData" id=10]
 [ext_resource path="res://scripts/tela_selecao.gd" type="Script" id=11]
 [ext_resource path="res://musics/Automation.mp3" type="AudioStream" id=12]
+[ext_resource path="res://fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -23,7 +23,7 @@ animations = [ {
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
-font_data = ExtResource( 10 )
+font_data = ExtResource( 13 )
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -107,7 +107,7 @@ tracks/2/keys = {
 [sub_resource type="Theme" id=5]
 
 [sub_resource type="DynamicFont" id=6]
-font_data = ExtResource( 10 )
+font_data = ExtResource( 13 )
 
 [node name="TelaEndgame" type="Node2D"]
 script = ExtResource( 11 )

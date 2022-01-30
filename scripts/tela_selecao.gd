@@ -1,7 +1,7 @@
 extends Node2D
 
 func _on_btnJogar_pressed():
-	GameControl.changeLevel(1)
+	GameControl.changeGameStart()
 
 
 func _on_btnCredito_pressed():
