@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scennes/levels/florest/background_florest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scennes/tilemap.tres" type="TileSet" id=2]
@@ -12,26 +12,136 @@
 [ext_resource path="res://scennes/others/path_diamont.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scennes/enemies/big_bat.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scennes/enemies/bat.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scennes/others/death_area.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scennes/enemies/enemy_cat.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scennes/enemies/spike_factor.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scennes/enemies/snake.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scennes/enemies/spikeball.tscn" type="PackedScene" id=18]
+[ext_resource path="res://sprites/others/keys.png" type="Texture" id=19]
+[ext_resource path="res://scennes/others/diamont.tscn" type="PackedScene" id=20]
+
+[sub_resource type="Curve2D" id=13]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1120, 315.665, 0, 0, 0, 0, 1344, 315.665 )
+}
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 280, 344.815, 0, 0, 0, 0, 354, 345.741, 0, 0, 0, 0, 351, 272.593, 0, 0, 0, 0, 414, 273.519, 0, 0, 0, 0, 413, 222.593, 0, 0, 0, 0, 519, 223.519 )
+"points": PoolVector2Array( 0, 0, 0, 0, 448, 296.296, 0, 0, 0, 0, 608, 296.296, 0, 0, 0, 0, 608, 385.185, 0, 0, 0, 0, 704, 385.185, 0, 0, 0, 0, 984, 385.185 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1600, 349.959, 0, 0, 0, 0, 1984, 349.959, 0, 0, 0, 0, 1984, 240.219, 0, 0, 0, 0, 1984, 192.208 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2336, 212.785, 0, 0, 0, 0, 2496, 212.785, 0, 0, 0, 0, 2496, 322.524 )
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 4248, 130.48, 0, 0, 0, 0, 4480, 130.48, 0, 0, 0, 0, 4480, 295.089 )
+}
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 4608, 432.263, 0, 0, 0, 0, 4832, 432.263, 0, 0, 0, 0, 4832, 377.394, 0, 0, 0, 0, 4896, 377.394, 0, 0, 0, 0, 4896, 322.524, 0, 0, 0, 0, 5184, 322.524, 0, 0, 0, 0, 5184, 349.959 )
+}
+
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 5376, 569.438, 0, 0, 0, 0, 5376, 734.047 )
+}
+
+[sub_resource type="Curve2D" id=7]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 5376, 953.525, 0, 0, 0, 0, 5368, 1111.28 )
+}
+
+[sub_resource type="Curve2D" id=8]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 5504, 1365.05, 0, 0, 0, 0, 5664, 1365.05, 0, 0, 0, 0, 5664, 1419.92, 0, 0, 0, 0, 5856, 1419.92, 0, 0, 0, 0, 5856, 1365.05, 0, 0, 0, 0, 6048, 1371.91, 0, 0, 0, 0, 6048, 1419.92, 0, 0, 0, 0, 6272, 1419.92 )
+}
+
+[sub_resource type="Curve2D" id=9]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 6400, 1282.74, 0, 0, 0, 0, 6528, 1289.6 )
+}
+
+[sub_resource type="Curve2D" id=10]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 7040, 1118.13, 0, 0, 0, 0, 7168, 1118.13 )
+}
+
+[sub_resource type="Curve2D" id=11]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 7936, 1227.87, 0, 0, 0, 0, 8192, 1227.87, 0, 0, 0, 0, 8512, 1227.87 )
+}
+
+[sub_resource type="Curve2D" id=12]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 9784, 1255.31, 0, 0, 0, 0, 9536, 1255.31, 0, 0, 0, 0, 9536, 1337.61, 0, 0, 0, 0, 9408, 1337.61, 0, 0, 0, 0, 9408, 1227.87, 0, 0, 0, 0, 8768, 1227.87 )
 }
 
 [node name="Level_1" type="Node2D" groups=["Level"]]
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 
+[node name="DeathArea" type="Node2D" parent="."]
+scale = Vector2( 1, 1.08 )
+
+[node name="DeathArea" parent="DeathArea" instance=ExtResource( 14 )]
+position = Vector2( 1200, 577.778 )
+scale = Vector2( 2.32, 1 )
+
+[node name="DeathArea2" parent="DeathArea" instance=ExtResource( 14 )]
+position = Vector2( 2888, 637.037 )
+scale = Vector2( 13, 1 )
+
+[node name="DeathArea3" parent="DeathArea" instance=ExtResource( 14 )]
+position = Vector2( 8144, 1666.67 )
+scale = Vector2( 39.147, -1.39082 )
+
 [node name="InvisibleBlock" type="Node2D" parent="."]
 position = Vector2( 992, 352 )
 
 [node name="InvisibleBarrier" parent="InvisibleBlock" instance=ExtResource( 6 )]
-position = Vector2( -1024, -192 )
-scale = Vector2( -3.07285, 16.7507 )
+position = Vector2( -984, -104 )
+scale = Vector2( -3.07285, 25.2307 )
 
 [node name="InvisibleBarrier2" parent="InvisibleBlock" instance=ExtResource( 6 )]
-position = Vector2( -399, -363 )
-scale = Vector2( 60, 5 )
+position = Vector2( 66.0001, -363 )
+scale = Vector2( 105, 5 )
+
+[node name="InvisibleBarrier4" parent="InvisibleBlock" instance=ExtResource( 6 )]
+position = Vector2( 3533, -363 )
+scale = Vector2( 105, 5 )
+
+[node name="InvisibleBarrier5" parent="InvisibleBlock" instance=ExtResource( 6 )]
+position = Vector2( 6064, 600 )
+scale = Vector2( 79.24, 5 )
+
+[node name="InvisibleBarrier7" parent="InvisibleBlock" instance=ExtResource( 6 )]
+position = Vector2( 7176, 528 )
+scale = Vector2( 79.24, 5 )
+
+[node name="InvisibleBarrier8" parent="InvisibleBlock" instance=ExtResource( 6 )]
+position = Vector2( 8664, 1320 )
+scale = Vector2( -3.9739, -16.9731 )
+
+[node name="InvisibleBarrier9" parent="InvisibleBlock" instance=ExtResource( 6 )]
+position = Vector2( 8512, 864 )
+scale = Vector2( -1.4139, -16.9731 )
+
+[node name="InvisibleBarrier10" parent="InvisibleBlock" instance=ExtResource( 6 )]
+position = Vector2( 64, -231 )
+scale = Vector2( -1.4139, -16.9731 )
+
+[node name="InvisibleBarrier6" parent="InvisibleBlock" instance=ExtResource( 6 )]
+position = Vector2( 8296, 624 )
+scale = Vector2( 49.24, 21.12 )
 
 [node name="InvisibleBarrier3" parent="InvisibleBlock" instance=ExtResource( 6 )]
 position = Vector2( -417, -298 )
@@ -42,62 +152,374 @@ tile_set = ExtResource( 3 )
 collision_layer = 4
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( -65530, 3, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 9, 0, 6, 3, 0, 11, 8, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 9, 0, 65542, 5, 0, 65543, 6, 0, 65544, 6, 0, 65545, 6, 0, 65546, 6, 0, 65547, 11, 0 )
+tile_data = PoolIntArray( -65530, 3, 0, 0, 0, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 9, 0, 6, 3, 0, 11, 8, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 2, 0, 17, 10, 0, 18, 6, 0, 19, 6, 0, 20, 6, 0, 21, 6, 0, 22, 6, 0, 23, 6, 0, 24, 6, 0, 25, 6, 0, 26, 6, 0, 27, 6, 0, 28, 6, 0, 29, 6, 0, 30, 6, 0, 31, 6, 0, 32, 11, 0, 54, 8, 0, 55, 1, 0, 56, 1, 0, 57, 1, 0, 58, 1, 0, 59, 1, 0, 60, 1, 0, 61, 1, 0, 62, 1, 0, 63, 1, 0, 64, 1, 0, 65, 1, 0, 66, 1, 0, 67, 1, 0, 68, 1, 0, 69, 1, 0, 70, 1, 0, 71, 1, 0, 72, 1, 0, 73, 1, 0, 74, 1, 0, 75, 1, 0, 76, 1, 0, 77, 1, 0, 78, 1, 0, 79, 1, 0, 80, 1, 0, 81, 1, 0, 82, 1, 0, 83, 1, 0, 84, 1, 0, 85, 1, 0, 86, 9, 0, 65536, 3, 0, 65542, 5, 0, 65543, 6, 0, 65544, 6, 0, 65545, 6, 0, 65546, 6, 0, 65547, 11, 0, 65552, 4, 0, 131072, 3, 0, 131088, 4, 0, 196608, 3, 0, 196624, 4, 0, 262144, 3, 0, 262160, 13, 0, 327680, 3, 0, 458874, 3, 0, 524410, 3, 0, 589946, 3, 0, 655482, 3, 0, 721018, 3, 0, 721033, 3, 0, 786554, 3, 0, 786569, 3, 0, 852090, 3, 0, 852105, 3, 0, 917626, 5, 0, 917627, 6, 0, 917628, 6, 0, 917629, 6, 0, 917630, 6, 0, 917631, 6, 0, 917632, 6, 0, 917633, 6, 0, 917634, 6, 0, 917635, 6, 0, 917636, 6, 0, 917637, 6, 0, 917638, 6, 0, 917639, 6, 0, 917640, 11, 0, 917641, 3, 0, 983138, 8, 0, 983139, 1, 0, 983140, 1, 0, 983141, 1, 0, 983142, 1, 0, 983143, 1, 0, 983144, 1, 0, 983145, 1, 0, 983146, 1, 0, 983147, 1, 0, 983148, 1, 0, 983149, 1, 0, 983150, 1, 0, 983151, 1, 0, 983152, 1, 0, 983153, 1, 0, 983154, 1, 0, 983155, 1, 0, 983156, 1, 0, 983157, 1, 0, 983158, 1, 0, 983159, 1, 0, 983160, 1, 0, 983161, 1, 0, 983162, 9, 0, 983177, 3, 0, 1048713, 3, 0, 1114249, 3, 0, 1179785, 5, 0, 1179786, 6, 0, 1179787, 6, 0, 1179788, 6, 0, 1179789, 6, 0, 1179790, 6, 0, 1179791, 6, 0, 1179792, 6, 0, 1179793, 6, 0, 1179794, 6, 0, 1179795, 11, 0, 1179796, 0, 0, 1179797, 1, 0, 1179798, 1, 0, 1179799, 9, 0, 1245332, 3, 0, 1310868, 3, 0, 1376404, 15, 0, 1507478, 0, 0, 1507479, 2, 0, 1573014, 3, 0, 1573015, 13, 0, 1638550, 3, 0, 1704086, 3, 0, 1769622, 3, 0, 1835158, 3, 0 )
 
 [node name="TileMapPlatform" type="TileMap" parent="."]
+position = Vector2( 0, 128 )
 tile_set = ExtResource( 2 )
 collision_layer = 2
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 65561, 3, 0, 131090, 3, 0, 131091, 3, 0, 131097, 2, 0, 196625, 3, 0, 196626, 2, 0, 196627, 2, 0, 196633, 2, 0, 262151, 3, 0, 262152, 3, 0, 262160, 3, 0, 262161, 2, 0, 262162, 2, 0, 262163, 2, 0, 262169, 2, 0, 327680, 3, 0, 327686, 3, 0, 327687, 2, 0, 327688, 2, 0, 327689, 3, 0, 327690, 3, 0, 327697, 2, 0, 327698, 2, 0, 327699, 2, 0, 327700, 3, 0, 327701, 3, 0, 327702, 3, 0, 327703, 3, 0, 327704, 3, 0, 327705, 2, 0, 393216, 2, 0, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0, 393231, 3, 0, 393232, 3, 0, 393233, 2, 0, 393234, 2, 0, 393235, 2, 0, 393236, 2, 0, 393237, 2, 0, 393238, 2, 0, 393239, 2, 0, 393240, 2, 0, 393241, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 458765, 2, 0, 458766, 2, 0, 458767, 2, 0, 458768, 2, 0, 458769, 2, 0, 458770, 2, 0, 458771, 2, 0, 458772, 2, 0, 458773, 2, 0, 458774, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0 )
+tile_data = PoolIntArray( -131039, 2, 0, -131038, 2, 0, -131037, 2, 0, -131036, 2, 0, -131035, 2, 0, -131034, 2, 0, -131033, 2, 0, -131032, 2, 0, -131031, 2, 0, -131030, 2, 0, -131029, 2, 0, -131028, 2, 0, -131027, 2, 0, -131026, 2, 0, -131025, 2, 0, -131024, 2, 0, -131023, 2, 0, -131022, 2, 0, -131021, 2, 0, -131020, 2, 0, -131019, 2, 0, -130985, 2, 0, -130984, 2, 0, -130983, 2, 0, -130977, 2, 0, -130976, 2, 0, -130975, 2, 0, -65503, 2, 0, -65502, 2, 0, -65501, 2, 0, -65500, 2, 0, -65494, 2, 0, -65493, 2, 0, -65492, 2, 0, -65491, 2, 0, -65490, 2, 0, -65489, 2, 0, -65488, 2, 0, -65487, 2, 0, -65486, 2, 0, -65464, 2, 0, -65463, 2, 0, -65462, 2, 0, -65461, 2, 0, -65460, 2, 0, -65459, 2, 0, -65455, 2, 0, -65454, 2, 0, -65453, 2, 0, -65452, 2, 0, -65451, 2, 0, -65450, 2, 0, -65449, 2, 0, -65448, 2, 0, -65447, 2, 0, -65441, 2, 0, -65440, 2, 0, -65439, 2, 0, 33, 2, 0, 34, 2, 0, 35, 2, 0, 36, 2, 0, 43, 2, 0, 44, 2, 0, 45, 2, 0, 72, 2, 0, 73, 2, 0, 74, 2, 0, 75, 2, 0, 76, 2, 0, 82, 2, 0, 83, 2, 0, 84, 2, 0, 85, 2, 0, 86, 2, 0, 87, 2, 0, 88, 2, 0, 89, 2, 0, 95, 2, 0, 96, 2, 0, 97, 2, 0, 65602, 3, 0, 65603, 3, 0, 65604, 3, 0, 65609, 2, 0, 65610, 2, 0, 65611, 2, 0, 65620, 2, 0, 65621, 2, 0, 65622, 2, 0, 65623, 2, 0, 65624, 2, 0, 65625, 2, 0, 65631, 2, 0, 65632, 2, 0, 65633, 2, 0, 131137, 3, 0, 131138, 2, 0, 131139, 2, 0, 131140, 2, 0, 131156, 2, 0, 131157, 2, 0, 131158, 2, 0, 131159, 2, 0, 131160, 2, 0, 131161, 2, 0, 131167, 2, 0, 131168, 2, 0, 131169, 2, 0, 196640, 3, 0, 196641, 3, 0, 196642, 3, 0, 196643, 3, 0, 196644, 3, 0, 196658, 3, 0, 196659, 3, 0, 196661, 3, 0, 196662, 3, 0, 196663, 3, 0, 196667, 3, 0, 196672, 3, 0, 196673, 2, 0, 196674, 2, 0, 196675, 2, 0, 196676, 2, 0, 196692, 2, 0, 196693, 2, 0, 196694, 2, 0, 196695, 2, 0, 196696, 2, 0, 196697, 2, 0, 196703, 2, 0, 196704, 2, 0, 196705, 2, 0, 262144, 3, 0, 262151, 3, 0, 262152, 3, 0, 262160, 3, 0, 262161, 3, 0, 262164, 3, 0, 262165, 3, 0, 262176, 2, 0, 262177, 2, 0, 262178, 2, 0, 262179, 2, 0, 262180, 2, 0, 262182, 3, 0, 262183, 3, 0, 262190, 3, 0, 262191, 3, 0, 262194, 2, 0, 262195, 2, 0, 262197, 2, 0, 262198, 2, 0, 262199, 2, 0, 262200, 3, 0, 262201, 3, 0, 262202, 3, 0, 262203, 2, 0, 262204, 3, 0, 262205, 3, 0, 262206, 3, 0, 262207, 3, 0, 262208, 2, 0, 262209, 2, 0, 262210, 2, 0, 262211, 2, 0, 262212, 2, 0, 262221, 3, 0, 262222, 3, 0, 262223, 3, 0, 262229, 2, 0, 262230, 2, 0, 262231, 2, 0, 262232, 2, 0, 262233, 2, 0, 262239, 2, 0, 262240, 2, 0, 262241, 2, 0, 327680, 2, 0, 327681, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, 327686, 3, 0, 327687, 2, 0, 327688, 2, 0, 327689, 3, 0, 327690, 3, 0, 327695, 3, 0, 327696, 2, 0, 327697, 2, 0, 327700, 2, 0, 327701, 2, 0, 327702, 3, 0, 327703, 3, 0, 327704, 3, 0, 327705, 3, 0, 327706, 3, 0, 327707, 3, 0, 327712, 2, 0, 327713, 2, 0, 327714, 2, 0, 327715, 2, 0, 327716, 2, 0, 327718, 2, 0, 327719, 2, 0, 327722, 3, 0, 327723, 3, 0, 327726, 2, 0, 327727, 2, 0, 327733, 2, 0, 327734, 2, 0, 327735, 2, 0, 327736, 2, 0, 327737, 2, 0, 327738, 2, 0, 327739, 2, 0, 327740, 2, 0, 327741, 2, 0, 327742, 2, 0, 327743, 2, 0, 327744, 2, 0, 327745, 2, 0, 327746, 2, 0, 327747, 2, 0, 327748, 2, 0, 327756, 3, 0, 327757, 2, 0, 327758, 2, 0, 327759, 2, 0, 327765, 2, 0, 327766, 2, 0, 327767, 2, 0, 327768, 2, 0, 327769, 2, 0, 327773, 2, 0, 327775, 2, 0, 327776, 2, 0, 327777, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0, 393231, 2, 0, 393232, 2, 0, 393233, 2, 0, 393236, 2, 0, 393237, 2, 0, 393238, 2, 0, 393239, 2, 0, 393240, 2, 0, 393241, 2, 0, 393242, 2, 0, 393243, 2, 0, 393244, 3, 0, 393245, 3, 0, 393246, 3, 0, 393247, 3, 0, 393248, 2, 0, 393249, 2, 0, 393250, 2, 0, 393251, 2, 0, 393252, 2, 0, 393258, 2, 0, 393259, 2, 0, 393269, 2, 0, 393270, 2, 0, 393271, 2, 0, 393272, 2, 0, 393273, 2, 0, 393274, 2, 0, 393275, 2, 0, 393276, 2, 0, 393277, 2, 0, 393278, 2, 0, 393279, 2, 0, 393280, 2, 0, 393281, 2, 0, 393282, 2, 0, 393283, 2, 0, 393284, 2, 0, 393285, 3, 0, 393290, 3, 0, 393291, 3, 0, 393292, 2, 0, 393293, 2, 0, 393294, 2, 0, 393295, 2, 0, 393301, 2, 0, 393302, 2, 0, 393303, 2, 0, 393304, 2, 0, 393305, 2, 0, 393307, 2, 0, 393309, 2, 0, 393311, 2, 0, 393312, 2, 0, 393313, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 458765, 2, 0, 458766, 2, 0, 458767, 2, 0, 458768, 2, 0, 458769, 2, 0, 458772, 2, 0, 458773, 2, 0, 458774, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0, 458778, 2, 0, 458779, 2, 0, 458780, 2, 0, 458781, 2, 0, 458782, 2, 0, 458783, 2, 0, 458784, 2, 0, 458785, 2, 0, 458786, 2, 0, 458787, 2, 0, 458788, 2, 0, 458805, 2, 0, 458806, 2, 0, 458807, 2, 0, 458808, 2, 0, 458809, 2, 0, 458810, 2, 0, 458811, 2, 0, 458812, 2, 0, 458813, 2, 0, 458814, 2, 0, 458815, 2, 0, 458816, 2, 0, 458817, 2, 0, 458818, 2, 0, 458819, 2, 0, 458820, 2, 0, 458821, 2, 0, 458822, 3, 0, 458823, 3, 0, 458824, 3, 0, 458825, 3, 0, 458826, 2, 0, 458827, 2, 0, 458828, 2, 0, 458829, 2, 0, 458830, 2, 0, 458831, 2, 0, 458837, 2, 0, 458838, 2, 0, 458839, 2, 0, 458840, 2, 0, 458841, 2, 0, 458843, 2, 0, 458845, 2, 0, 458847, 2, 0, 458848, 2, 0, 458849, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0, 524304, 2, 0, 524305, 2, 0, 524308, 2, 0, 524309, 2, 0, 524310, 2, 0, 524311, 2, 0, 524312, 2, 0, 524313, 2, 0, 524314, 2, 0, 524315, 2, 0, 524316, 2, 0, 524317, 2, 0, 524318, 2, 0, 524319, 2, 0, 524320, 2, 0, 524321, 2, 0, 524322, 2, 0, 524323, 2, 0, 524324, 2, 0, 524341, 2, 0, 524342, 2, 0, 524343, 2, 0, 524344, 2, 0, 524345, 2, 0, 524346, 2, 0, 524347, 2, 0, 524348, 2, 0, 524349, 2, 0, 524350, 2, 0, 524351, 2, 0, 524352, 2, 0, 524353, 2, 0, 524354, 2, 0, 524355, 2, 0, 524356, 2, 0, 524357, 2, 0, 524358, 2, 0, 524359, 2, 0, 524360, 2, 0, 524361, 2, 0, 524362, 2, 0, 524363, 2, 0, 524364, 2, 0, 524365, 2, 0, 524366, 2, 0, 524367, 2, 0, 524373, 2, 0, 524374, 2, 0, 524375, 2, 0, 524376, 2, 0, 524377, 2, 0, 524378, 2, 0, 524379, 2, 0, 524380, 2, 0, 524381, 2, 0, 524383, 2, 0, 524384, 2, 0, 524385, 2, 0, 589900, 2, 0, 589901, 2, 0, 589902, 2, 0, 589903, 2, 0, 589904, 3, 0, 589905, 3, 0, 589906, 3, 0, 589909, 2, 0, 589910, 2, 0, 589911, 2, 0, 589912, 2, 0, 589913, 2, 0, 589914, 2, 0, 589915, 2, 0, 589916, 2, 0, 589917, 2, 0, 589919, 2, 0, 589920, 2, 0, 589921, 2, 0, 655436, 2, 0, 655437, 2, 0, 655438, 2, 0, 655439, 2, 0, 655440, 2, 0, 655441, 2, 0, 655442, 2, 0, 655447, 2, 0, 655448, 2, 0, 655449, 2, 0, 655450, 2, 0, 655451, 2, 0, 655452, 2, 0, 655453, 2, 0, 655455, 2, 0, 655456, 2, 0, 655457, 2, 0, 655511, 2, 0, 655512, 2, 0, 655513, 2, 0, 655514, 2, 0, 655515, 2, 0, 655516, 2, 0, 655517, 2, 0, 655518, 2, 0, 655519, 2, 0, 655520, 2, 0, 655521, 2, 0, 720973, 2, 0, 720974, 2, 0, 720975, 2, 0, 720976, 2, 0, 720977, 2, 0, 720978, 2, 0, 720983, 2, 0, 720984, 2, 0, 720985, 2, 0, 720986, 2, 0, 720987, 2, 0, 720988, 2, 0, 720989, 2, 0, 720990, 2, 0, 720991, 2, 0, 720992, 2, 0, 720993, 2, 0, 721047, 2, 0, 721048, 2, 0, 721049, 2, 0, 721050, 2, 0, 721051, 2, 0, 721052, 2, 0, 721053, 2, 0, 721054, 2, 0, 721055, 2, 0, 721056, 2, 0, 721057, 2, 0, 786509, 2, 0, 786510, 2, 0, 786511, 2, 0, 786512, 2, 0, 786513, 2, 0, 786514, 2, 0, 786515, 3, 0, 786516, 3, 0, 786519, 2, 0, 786520, 2, 0, 786521, 2, 0, 786522, 2, 0, 786523, 2, 0, 786524, 2, 0, 786525, 2, 0, 786526, 2, 0, 786527, 2, 0, 786528, 2, 0, 786529, 2, 0, 786583, 2, 0, 786584, 2, 0, 786585, 2, 0, 786586, 2, 0, 786587, 2, 0, 786588, 2, 0, 786589, 2, 0, 786590, 2, 0, 786591, 2, 0, 786592, 2, 0, 786593, 2, 0, 852046, 2, 0, 852047, 2, 0, 852048, 2, 0, 852049, 2, 0, 852050, 2, 0, 852051, 2, 0, 852052, 2, 0, 852055, 2, 0, 852056, 2, 0, 852057, 2, 0, 852058, 2, 0, 852059, 2, 0, 852060, 2, 0, 852061, 2, 0, 852062, 2, 0, 852063, 2, 0, 852064, 2, 0, 852065, 2, 0, 852119, 2, 0, 852120, 2, 0, 852121, 2, 0, 852122, 2, 0, 852123, 2, 0, 852124, 2, 0, 852125, 2, 0, 852126, 2, 0, 852127, 2, 0, 852128, 2, 0, 852129, 2, 0, 917582, 2, 0, 917583, 2, 0, 917584, 2, 0, 917585, 2, 0, 917586, 2, 0, 917591, 2, 0, 917592, 2, 0, 917593, 2, 0, 917594, 2, 0, 917595, 2, 0, 917596, 2, 0, 917597, 2, 0, 917598, 2, 0, 917599, 2, 0, 917600, 2, 0, 917601, 2, 0, 917602, 2, 0, 917603, 2, 0, 917604, 2, 0, 917605, 2, 0, 917655, 2, 0, 917656, 2, 0, 917657, 2, 0, 917658, 2, 0, 917659, 2, 0, 917660, 2, 0, 917661, 2, 0, 917662, 2, 0, 917663, 2, 0, 917664, 2, 0, 917665, 2, 0, 983118, 2, 0, 983119, 2, 0, 983120, 2, 0, 983121, 2, 0, 983122, 2, 0, 983127, 2, 0, 983128, 2, 0, 983129, 2, 0, 983130, 2, 0, 983131, 2, 0, 983132, 2, 0, 983133, 2, 0, 983134, 2, 0, 983135, 2, 0, 983136, 2, 0, 983137, 2, 0, 983138, 2, 0, 983139, 2, 0, 983140, 2, 0, 983141, 2, 0, 983191, 2, 0, 983192, 2, 0, 983193, 2, 0, 983194, 2, 0, 983195, 2, 0, 983196, 2, 0, 983197, 2, 0, 983198, 2, 0, 983199, 2, 0, 983200, 2, 0, 983201, 2, 0, 1048654, 2, 0, 1048655, 2, 0, 1048656, 2, 0, 1048657, 2, 0, 1048658, 2, 0, 1048661, 3, 0, 1048662, 3, 0, 1048663, 2, 0, 1048664, 2, 0, 1048665, 2, 0, 1048666, 2, 0, 1048667, 2, 0, 1048668, 2, 0, 1048669, 2, 0, 1048670, 2, 0, 1048671, 2, 0, 1048672, 2, 0, 1048673, 2, 0, 1048674, 2, 0, 1048675, 2, 0, 1048676, 2, 0, 1048728, 2, 0, 1048729, 2, 0, 1048730, 2, 0, 1048731, 2, 0, 1048732, 2, 0, 1048733, 2, 0, 1048734, 2, 0, 1048735, 2, 0, 1048736, 2, 0, 1048737, 2, 0, 1114190, 2, 0, 1114191, 2, 0, 1114192, 2, 0, 1114193, 2, 0, 1114194, 2, 0, 1114197, 2, 0, 1114198, 2, 0, 1114199, 2, 0, 1114200, 2, 0, 1114201, 2, 0, 1114202, 2, 0, 1114203, 2, 0, 1114204, 2, 0, 1114205, 2, 0, 1114206, 2, 0, 1114207, 2, 0, 1114208, 2, 0, 1114209, 2, 0, 1114210, 2, 0, 1114211, 2, 0, 1114264, 2, 0, 1114265, 2, 0, 1114266, 2, 0, 1114267, 2, 0, 1114268, 2, 0, 1114269, 2, 0, 1114270, 2, 0, 1114271, 2, 0, 1114272, 2, 0, 1114273, 2, 0, 1179726, 2, 0, 1179727, 2, 0, 1179728, 2, 0, 1179729, 2, 0, 1179730, 2, 0, 1179735, 2, 0, 1179736, 2, 0, 1179737, 2, 0, 1179738, 2, 0, 1179739, 2, 0, 1179740, 2, 0, 1179741, 2, 0, 1179742, 2, 0, 1179743, 2, 0, 1179744, 2, 0, 1179745, 2, 0, 1179746, 2, 0, 1179747, 2, 0, 1179763, 3, 0, 1179764, 3, 0, 1179800, 2, 0, 1179801, 2, 0, 1179802, 2, 0, 1179803, 2, 0, 1179804, 2, 0, 1179805, 2, 0, 1179806, 2, 0, 1179807, 2, 0, 1179808, 2, 0, 1179809, 2, 0, 1245262, 2, 0, 1245263, 2, 0, 1245264, 2, 0, 1245265, 2, 0, 1245266, 2, 0, 1245271, 2, 0, 1245272, 2, 0, 1245273, 2, 0, 1245274, 2, 0, 1245275, 2, 0, 1245276, 2, 0, 1245277, 2, 0, 1245278, 2, 0, 1245279, 2, 0, 1245280, 2, 0, 1245281, 2, 0, 1245293, 3, 0, 1245294, 3, 0, 1245295, 3, 0, 1245296, 3, 0, 1245299, 2, 0, 1245300, 2, 0, 1245303, 3, 0, 1245304, 3, 0, 1245337, 2, 0, 1245338, 2, 0, 1245339, 2, 0, 1245340, 2, 0, 1245341, 2, 0, 1245342, 2, 0, 1245343, 2, 0, 1245344, 2, 0, 1245345, 2, 0, 1310798, 2, 0, 1310799, 2, 0, 1310800, 2, 0, 1310801, 2, 0, 1310802, 2, 0, 1310803, 3, 0, 1310804, 3, 0, 1310807, 2, 0, 1310808, 2, 0, 1310809, 2, 0, 1310810, 2, 0, 1310811, 2, 0, 1310812, 2, 0, 1310813, 2, 0, 1310814, 2, 0, 1310815, 2, 0, 1310816, 2, 0, 1310817, 2, 0, 1310828, 3, 0, 1310829, 2, 0, 1310830, 2, 0, 1310831, 2, 0, 1310832, 2, 0, 1310839, 2, 0, 1310840, 2, 0, 1310854, 3, 0, 1310855, 3, 0, 1310877, 2, 0, 1310878, 2, 0, 1310879, 2, 0, 1310880, 2, 0, 1310881, 2, 0, 1376334, 2, 0, 1376335, 2, 0, 1376336, 2, 0, 1376337, 2, 0, 1376338, 2, 0, 1376339, 2, 0, 1376340, 2, 0, 1376343, 2, 0, 1376344, 2, 0, 1376345, 2, 0, 1376346, 2, 0, 1376347, 2, 0, 1376348, 2, 0, 1376349, 2, 0, 1376350, 2, 0, 1376351, 2, 0, 1376352, 2, 0, 1376353, 2, 0, 1376361, 3, 0, 1376362, 3, 0, 1376365, 2, 0, 1376366, 2, 0, 1376367, 2, 0, 1376368, 2, 0, 1376379, 3, 0, 1376380, 3, 0, 1376381, 3, 0, 1376382, 3, 0, 1376388, 3, 0, 1376389, 3, 0, 1376390, 2, 0, 1376391, 2, 0, 1376396, 3, 0, 1376397, 3, 0, 1376398, 3, 0, 1376414, 2, 0, 1376415, 2, 0, 1376416, 2, 0, 1376417, 2, 0, 1441870, 2, 0, 1441871, 2, 0, 1441872, 2, 0, 1441873, 2, 0, 1441874, 2, 0, 1441875, 2, 0, 1441876, 2, 0, 1441892, 3, 0, 1441893, 3, 0, 1441894, 3, 0, 1441897, 2, 0, 1441898, 2, 0, 1441901, 2, 0, 1441902, 2, 0, 1441903, 2, 0, 1441904, 2, 0, 1441915, 2, 0, 1441916, 2, 0, 1441917, 2, 0, 1441918, 2, 0, 1441919, 3, 0, 1441920, 3, 0, 1441921, 3, 0, 1441922, 3, 0, 1441923, 3, 0, 1441924, 2, 0, 1441925, 2, 0, 1441926, 2, 0, 1441927, 2, 0, 1441932, 2, 0, 1441933, 2, 0, 1441934, 2, 0, 1441950, 2, 0, 1441951, 2, 0, 1441952, 2, 0, 1441953, 2, 0, 1507406, 2, 0, 1507407, 2, 0, 1507408, 2, 0, 1507409, 2, 0, 1507427, 3, 0, 1507428, 2, 0, 1507429, 2, 0, 1507430, 2, 0, 1507437, 2, 0, 1507438, 2, 0, 1507439, 2, 0, 1507440, 2, 0, 1507451, 2, 0, 1507452, 2, 0, 1507453, 2, 0, 1507454, 2, 0, 1507455, 2, 0, 1507456, 2, 0, 1507457, 2, 0, 1507458, 2, 0, 1507459, 2, 0, 1507460, 2, 0, 1507461, 2, 0, 1507462, 2, 0, 1507463, 2, 0, 1507464, 3, 0, 1507465, 3, 0, 1507466, 3, 0, 1507467, 3, 0, 1507468, 2, 0, 1507469, 2, 0, 1507470, 2, 0, 1507471, 3, 0, 1507472, 3, 0, 1507473, 3, 0, 1507474, 3, 0, 1507475, 3, 0, 1507479, 3, 0, 1507480, 3, 0, 1507481, 3, 0, 1507482, 3, 0, 1507483, 3, 0, 1507484, 3, 0, 1507485, 3, 0, 1507486, 2, 0, 1507487, 2, 0, 1507488, 2, 0, 1507489, 2, 0, 1572942, 2, 0, 1572943, 2, 0, 1572944, 2, 0, 1572945, 2, 0, 1572946, 3, 0, 1572947, 3, 0, 1572948, 3, 0, 1572949, 3, 0, 1572950, 3, 0, 1572951, 3, 0, 1572952, 3, 0, 1572953, 3, 0, 1572954, 3, 0, 1572955, 3, 0, 1572956, 3, 0, 1572957, 3, 0, 1572958, 3, 0, 1572959, 3, 0, 1572960, 3, 0, 1572961, 3, 0, 1572962, 3, 0, 1572963, 2, 0, 1572964, 2, 0, 1572965, 2, 0, 1572966, 2, 0, 1572973, 2, 0, 1572974, 2, 0, 1572975, 2, 0, 1572976, 2, 0, 1572977, 3, 0, 1572978, 3, 0, 1572987, 2, 0, 1572988, 2, 0, 1572989, 2, 0, 1572990, 2, 0, 1572991, 2, 0, 1572992, 2, 0, 1572993, 2, 0, 1572994, 2, 0, 1572995, 2, 0, 1572996, 2, 0, 1572997, 2, 0, 1572998, 2, 0, 1572999, 2, 0, 1573000, 2, 0, 1573001, 2, 0, 1573002, 2, 0, 1573003, 2, 0, 1573004, 2, 0, 1573005, 2, 0, 1573006, 2, 0, 1573007, 2, 0, 1573008, 2, 0, 1573009, 2, 0, 1573010, 2, 0, 1573011, 2, 0, 1573015, 2, 0, 1573016, 2, 0, 1573017, 2, 0, 1573018, 2, 0, 1573019, 2, 0, 1573020, 2, 0, 1573021, 2, 0, 1573022, 2, 0, 1573023, 2, 0, 1573024, 2, 0, 1573025, 2, 0, 1638478, 2, 0, 1638479, 2, 0, 1638480, 2, 0, 1638481, 2, 0, 1638482, 2, 0, 1638483, 2, 0, 1638484, 2, 0, 1638485, 2, 0, 1638486, 2, 0, 1638487, 2, 0, 1638488, 2, 0, 1638489, 2, 0, 1638490, 2, 0, 1638491, 2, 0, 1638492, 2, 0, 1638493, 2, 0, 1638494, 2, 0, 1638495, 2, 0, 1638496, 2, 0, 1638497, 2, 0, 1638498, 2, 0, 1638499, 2, 0, 1638500, 2, 0, 1638501, 2, 0, 1638502, 2, 0, 1638509, 2, 0, 1638510, 2, 0, 1638511, 2, 0, 1638512, 2, 0, 1638513, 2, 0, 1638514, 2, 0, 1638523, 2, 0, 1638524, 2, 0, 1638525, 2, 0, 1638526, 2, 0, 1638527, 2, 0, 1638528, 2, 0, 1638529, 2, 0, 1638530, 2, 0, 1638531, 2, 0, 1638532, 2, 0, 1638533, 2, 0, 1638534, 2, 0, 1638535, 2, 0, 1638536, 2, 0, 1638537, 2, 0, 1638538, 2, 0, 1638539, 2, 0, 1638540, 2, 0, 1638541, 2, 0, 1638542, 2, 0, 1638543, 2, 0, 1638544, 2, 0, 1638545, 2, 0, 1638546, 2, 0, 1638547, 2, 0, 1638551, 2, 0, 1638552, 2, 0, 1638553, 2, 0, 1638554, 2, 0, 1638555, 2, 0, 1638556, 2, 0, 1638557, 2, 0, 1638558, 2, 0, 1638559, 2, 0, 1638560, 2, 0, 1638561, 2, 0, 1704014, 2, 0, 1704015, 2, 0, 1704016, 2, 0, 1704017, 2, 0, 1704018, 2, 0, 1704019, 2, 0, 1704020, 2, 0, 1704021, 2, 0, 1704022, 2, 0, 1704023, 2, 0, 1704024, 2, 0, 1704025, 2, 0, 1704026, 2, 0, 1704027, 2, 0, 1704028, 2, 0, 1704029, 2, 0, 1704030, 2, 0, 1704031, 2, 0, 1704032, 2, 0, 1704033, 2, 0, 1704034, 2, 0, 1704035, 2, 0, 1704036, 2, 0, 1704037, 2, 0, 1704038, 2, 0, 1704045, 2, 0, 1704046, 2, 0, 1704047, 2, 0, 1704048, 2, 0, 1704059, 2, 0, 1704060, 2, 0, 1704061, 2, 0, 1704062, 2, 0, 1704063, 2, 0, 1704064, 2, 0, 1704065, 2, 0, 1704066, 2, 0, 1704067, 2, 0, 1704068, 2, 0, 1704069, 2, 0, 1704070, 2, 0, 1704071, 2, 0, 1704072, 2, 0, 1704073, 2, 0, 1704074, 2, 0, 1704075, 2, 0, 1704076, 2, 0, 1704077, 2, 0, 1704078, 2, 0, 1704079, 2, 0, 1704080, 2, 0, 1704081, 2, 0, 1704082, 2, 0, 1704083, 2, 0, 1704087, 2, 0, 1704088, 2, 0, 1704089, 2, 0, 1704090, 2, 0, 1704091, 2, 0, 1704092, 2, 0, 1704093, 2, 0, 1704094, 2, 0, 1704095, 2, 0, 1704096, 2, 0, 1704097, 2, 0 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
+[node name="EnemyRat2" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 8896, 1576 )
+
+[node name="EnemyRat4" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 4568, 552 )
+
+[node name="EnemyRat3" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 8400, 1512 )
+
 [node name="EnemyRat" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 936, 359 )
+position = Vector2( 936, 487 )
 
 [node name="Bat" parent="Enemies" instance=ExtResource( 12 )]
-position = Vector2( 142, 192 )
+position = Vector2( 1480, 320 )
 fly_range = 250
 
 [node name="Bat2" parent="Enemies" instance=ExtResource( 12 )]
-position = Vector2( 907, 190 )
+position = Vector2( 8640, 1344 )
 fly_range = 80
 fly_mode = 0
 
+[node name="EnemyCat" parent="Enemies" instance=ExtResource( 15 )]
+position = Vector2( 4040, 352 )
+
+[node name="Snake" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 5152, 712 )
+
+[node name="Bat3" parent="Enemies" instance=ExtResource( 12 )]
+position = Vector2( 6536, 1403 )
+
 [node name="BigBat" parent="Enemies" instance=ExtResource( 11 )]
-position = Vector2( 813, 152 )
+position = Vector2( 8000, 1280 )
 
 [node name="Barriers" type="Node2D" parent="."]
 
 [node name="Barrier" parent="Barriers" instance=ExtResource( 5 )]
-position = Vector2( 992, 352 )
+position = Vector2( 1058, 352 )
+
+[node name="Barrier2" parent="Barriers" instance=ExtResource( 5 )]
+position = Vector2( 2208, 288 )
+
+[node name="Barrier3" parent="Barriers" instance=ExtResource( 5 )]
+position = Vector2( 2272, 224 )
+
+[node name="Barrier4" parent="Barriers" instance=ExtResource( 5 )]
+position = Vector2( 2144, 224 )
+
+[node name="Barrier5" parent="Barriers" instance=ExtResource( 5 )]
+position = Vector2( 2336, 288 )
+
+[node name="Barrier6" parent="Barriers" instance=ExtResource( 5 )]
+position = Vector2( 5408, 1632 )
+
+[node name="Barrier7" parent="Barriers" instance=ExtResource( 5 )]
+position = Vector2( 5408, 1632 )
 
 [node name="LevelEnd" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1488, 288 )
+position = Vector2( 10008, 1568 )
 level_number = 2
 
 [node name="PlayerRespawn" parent="." instance=ExtResource( 4 )]
-position = Vector2( 128, 368 )
+position = Vector2( 160, 426 )
 
 [node name="Collectables" type="Node2D" parent="."]
-position = Vector2( 1.90735e-06, -22.4 )
 scale = Vector2( 1, 1.08 )
+
+[node name="PathDiamont13" parent="Collectables" instance=ExtResource( 10 )]
+curve = SubResource( 13 )
 
 [node name="PathDiamont" parent="Collectables" instance=ExtResource( 10 )]
 position = Vector2( 0, 0 )
 scale = Vector2( 1, 1 )
 curve = SubResource( 1 )
 
-[node name="Fruit" parent="Collectables" instance=ExtResource( 8 )]
-position = Vector2( 1058, 345.741 )
+[node name="PathDiamont2" parent="Collectables" instance=ExtResource( 10 )]
+curve = SubResource( 2 )
+
+[node name="PathDiamont3" parent="Collectables" instance=ExtResource( 10 )]
+curve = SubResource( 3 )
+
+[node name="PathDiamont4" parent="Collectables" instance=ExtResource( 10 )]
+curve = SubResource( 4 )
+
+[node name="PathDiamont5" parent="Collectables" instance=ExtResource( 10 )]
+curve = SubResource( 5 )
+
+[node name="PathDiamont6" parent="Collectables" instance=ExtResource( 10 )]
+curve = SubResource( 6 )
+
+[node name="PathDiamont7" parent="Collectables" instance=ExtResource( 10 )]
+curve = SubResource( 7 )
+
+[node name="PathDiamont8" parent="Collectables" instance=ExtResource( 10 )]
+curve = SubResource( 8 )
+
+[node name="Diamont10" parent="Collectables" instance=ExtResource( 20 )]
+position = Vector2( 6784, 1333.33 )
 scale = Vector2( 1, 0.925926 )
 
-[connection signal="body_entered" from="Collectables/PathDiamont/Diamont9" to="Collectables/PathDiamont/Diamont9" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="Collectables/PathDiamont/Diamont10" to="Collectables/PathDiamont/Diamont10" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="Collectables/PathDiamont/Diamont11" to="Collectables/PathDiamont/Diamont11" method="_on_diamont_body_entered"]
+[node name="Diamont" parent="Collectables" instance=ExtResource( 20 )]
+position = Vector2( 2144, 266.667 )
+scale = Vector2( 1, 0.925926 )
+
+[node name="Diamont2" parent="Collectables" instance=ExtResource( 20 )]
+position = Vector2( 2208, 207.408 )
+scale = Vector2( 1, 0.925926 )
+
+[node name="Diamont3" parent="Collectables" instance=ExtResource( 20 )]
+position = Vector2( 2272, 266.667 )
+scale = Vector2( 1, 0.925926 )
+
+[node name="Diamont4" parent="Collectables" instance=ExtResource( 20 )]
+position = Vector2( 2752, 377.778 )
+scale = Vector2( 1, 0.925926 )
+
+[node name="Diamont5" parent="Collectables" instance=ExtResource( 20 )]
+position = Vector2( 3008, 320.37 )
+scale = Vector2( 1, 0.925926 )
+
+[node name="Diamont6" parent="Collectables" instance=ExtResource( 20 )]
+position = Vector2( 3264, 264.815 )
+scale = Vector2( 1, 0.925926 )
+
+[node name="PathDiamont9" parent="Collectables" instance=ExtResource( 10 )]
+curve = SubResource( 9 )
+
+[node name="PathDiamont10" parent="Collectables" instance=ExtResource( 10 )]
+curve = SubResource( 10 )
+
+[node name="Diamont7" parent="Collectables" instance=ExtResource( 20 )]
+position = Vector2( 3808, 264.815 )
+scale = Vector2( 1, 0.925926 )
+
+[node name="PathDiamont11" parent="Collectables" instance=ExtResource( 10 )]
+curve = SubResource( 11 )
+
+[node name="PathDiamont12" parent="Collectables" instance=ExtResource( 10 )]
+curve = SubResource( 12 )
+
+[node name="Diamont8" parent="Collectables" instance=ExtResource( 20 )]
+position = Vector2( 4128, 266.667 )
+scale = Vector2( 1, 0.925926 )
+
+[node name="Diamont9" parent="Collectables" instance=ExtResource( 20 )]
+position = Vector2( 4192, 207.407 )
+scale = Vector2( 1, 0.925926 )
+
+[node name="Fruit2" parent="Collectables" instance=ExtResource( 8 )]
+position = Vector2( 5280, 1511.11 )
+scale = Vector2( 1, 0.925926 )
+
+[node name="Fruit" parent="Collectables" instance=ExtResource( 8 )]
+position = Vector2( 2528, 88.8889 )
+scale = Vector2( 1, 0.925926 )
+
+[node name="ControllersTutorial" type="Sprite" parent="."]
+position = Vector2( 288, 384 )
+texture = ExtResource( 19 )
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="SpikeFactor" parent="Spikes" instance=ExtResource( 16 )]
+position = Vector2( 1800, 480 )
+size = 16
+
+[node name="SpikeFactor5" parent="Spikes" instance=ExtResource( 16 )]
+position = Vector2( 5512, 1632 )
+size = 8
+
+[node name="SpikeFactor6" parent="Spikes" instance=ExtResource( 16 )]
+position = Vector2( 5896, 1632 )
+size = 8
+
+[node name="SpikeFactor7" parent="Spikes" instance=ExtResource( 16 )]
+position = Vector2( 5816, 1568 )
+rotation = 3.14159
+size = 8
+
+[node name="SpikeFactor8" parent="Spikes" instance=ExtResource( 16 )]
+position = Vector2( 6200, 1568 )
+rotation = 3.14159
+size = 8
+
+[node name="SpikeFactor4" parent="Spikes" instance=ExtResource( 16 )]
+position = Vector2( 3592, 353 )
+size = 12
+
+[node name="SpikeFactor2" parent="Spikes" instance=ExtResource( 16 )]
+position = Vector2( 2488, 96 )
+rotation = 3.14159
+size = 8
+
+[node name="SpikeFactor3" parent="Spikes" instance=ExtResource( 16 )]
+position = Vector2( 2680, 96 )
+rotation = 3.14159
+size = 8
+
+[node name="Spikeball" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 2752, 328 )
+
+[node name="Spikeball2" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 3008, 256 )
+
+[node name="Spikeball3" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 4448, 480 )
+
+[node name="Spikeball4" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 5344, 1376 )
+
+[node name="Spikeball7" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 7296, 1347 )
+
+[node name="Spikeball8" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 8128, 1096 )
+
+[node name="Spikeball9" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 8384, 1096 )
+
+[node name="Spikeball10" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 8640, 1088 )
+
+[node name="Spikeball6" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 6656, 1600 )
+
+[node name="Spikeball5" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 6912, 1536 )
+
+[node name="Spikeball11" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 5536, 800 )
+
+[node name="Spikeball12" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 5536, 864 )
+
+[node name="Spikeball13" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 5536, 928 )
+
+[node name="SpikeFactor9" parent="Spikes" instance=ExtResource( 16 )]
+position = Vector2( 9160, 1568 )
+size = 12
+
+[node name="Spikeball14" parent="Spikes" instance=ExtResource( 18 )]
+position = Vector2( 3488, 288 )
+
+[node name="Fruit" parent="." instance=ExtResource( 8 )]
+position = Vector2( 7296, 1600 )
+
+[node name="Diamont" parent="." instance=ExtResource( 20 )]
+position = Vector2( 7424, 1248 )
+
+[node name="Diamont2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 7680, 1312 )
+
+[connection signal="body_entered" from="Collectables/PathDiamont13/Diamont5" to="Collectables/PathDiamont13/Diamont5" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont13/Diamont6" to="Collectables/PathDiamont13/Diamont6" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont13/Diamont7" to="Collectables/PathDiamont13/Diamont7" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont13/Diamont8" to="Collectables/PathDiamont13/Diamont8" method="_on_diamont_body_entered"]
 [connection signal="body_entered" from="Collectables/PathDiamont/Diamont12" to="Collectables/PathDiamont/Diamont12" method="_on_diamont_body_entered"]
 [connection signal="body_entered" from="Collectables/PathDiamont/Diamont13" to="Collectables/PathDiamont/Diamont13" method="_on_diamont_body_entered"]
 [connection signal="body_entered" from="Collectables/PathDiamont/Diamont14" to="Collectables/PathDiamont/Diamont14" method="_on_diamont_body_entered"]
 [connection signal="body_entered" from="Collectables/PathDiamont/Diamont15" to="Collectables/PathDiamont/Diamont15" method="_on_diamont_body_entered"]
 [connection signal="body_entered" from="Collectables/PathDiamont/Diamont16" to="Collectables/PathDiamont/Diamont16" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont17" to="Collectables/PathDiamont/Diamont17" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont18" to="Collectables/PathDiamont/Diamont18" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont19" to="Collectables/PathDiamont/Diamont19" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont20" to="Collectables/PathDiamont/Diamont20" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont21" to="Collectables/PathDiamont/Diamont21" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont22" to="Collectables/PathDiamont/Diamont22" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont2/Diamont10" to="Collectables/PathDiamont2/Diamont10" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont2/Diamont11" to="Collectables/PathDiamont2/Diamont11" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont2/Diamont12" to="Collectables/PathDiamont2/Diamont12" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont2/Diamont13" to="Collectables/PathDiamont2/Diamont13" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont2/Diamont14" to="Collectables/PathDiamont2/Diamont14" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont2/Diamont15" to="Collectables/PathDiamont2/Diamont15" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont2/Diamont16" to="Collectables/PathDiamont2/Diamont16" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont2/Diamont17" to="Collectables/PathDiamont2/Diamont17" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont2/Diamont18" to="Collectables/PathDiamont2/Diamont18" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont3/Diamont6" to="Collectables/PathDiamont3/Diamont6" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont3/Diamont7" to="Collectables/PathDiamont3/Diamont7" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont3/Diamont8" to="Collectables/PathDiamont3/Diamont8" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont3/Diamont9" to="Collectables/PathDiamont3/Diamont9" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont3/Diamont10" to="Collectables/PathDiamont3/Diamont10" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont4/Diamont8" to="Collectables/PathDiamont4/Diamont8" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont4/Diamont9" to="Collectables/PathDiamont4/Diamont9" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont4/Diamont10" to="Collectables/PathDiamont4/Diamont10" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont4/Diamont11" to="Collectables/PathDiamont4/Diamont11" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont4/Diamont12" to="Collectables/PathDiamont4/Diamont12" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont4/Diamont13" to="Collectables/PathDiamont4/Diamont13" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont4/Diamont14" to="Collectables/PathDiamont4/Diamont14" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont5/Diamont2" to="Collectables/PathDiamont5/Diamont2" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont5/Diamont3" to="Collectables/PathDiamont5/Diamont3" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont5/Diamont4" to="Collectables/PathDiamont5/Diamont4" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont5/Diamont5" to="Collectables/PathDiamont5/Diamont5" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont5/Diamont6" to="Collectables/PathDiamont5/Diamont6" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont5/Diamont7" to="Collectables/PathDiamont5/Diamont7" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont5/Diamont8" to="Collectables/PathDiamont5/Diamont8" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont5/Diamont9" to="Collectables/PathDiamont5/Diamont9" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont5/Diamont10" to="Collectables/PathDiamont5/Diamont10" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont5/Diamont11" to="Collectables/PathDiamont5/Diamont11" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont5/Diamont12" to="Collectables/PathDiamont5/Diamont12" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont5/Diamont25" to="Collectables/PathDiamont5/Diamont25" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont6/Diamont4" to="Collectables/PathDiamont6/Diamont4" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont6/Diamont5" to="Collectables/PathDiamont6/Diamont5" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont6/Diamont6" to="Collectables/PathDiamont6/Diamont6" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont7/Diamont4" to="Collectables/PathDiamont7/Diamont4" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont7/Diamont5" to="Collectables/PathDiamont7/Diamont5" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont7/Diamont6" to="Collectables/PathDiamont7/Diamont6" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont17" to="Collectables/PathDiamont8/Diamont17" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont18" to="Collectables/PathDiamont8/Diamont18" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont19" to="Collectables/PathDiamont8/Diamont19" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont20" to="Collectables/PathDiamont8/Diamont20" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont21" to="Collectables/PathDiamont8/Diamont21" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont22" to="Collectables/PathDiamont8/Diamont22" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont23" to="Collectables/PathDiamont8/Diamont23" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont24" to="Collectables/PathDiamont8/Diamont24" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont25" to="Collectables/PathDiamont8/Diamont25" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont26" to="Collectables/PathDiamont8/Diamont26" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont27" to="Collectables/PathDiamont8/Diamont27" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont28" to="Collectables/PathDiamont8/Diamont28" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont29" to="Collectables/PathDiamont8/Diamont29" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont30" to="Collectables/PathDiamont8/Diamont30" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont31" to="Collectables/PathDiamont8/Diamont31" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont8/Diamont32" to="Collectables/PathDiamont8/Diamont32" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont9/Diamont4" to="Collectables/PathDiamont9/Diamont4" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont9/Diamont5" to="Collectables/PathDiamont9/Diamont5" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont9/Diamont6" to="Collectables/PathDiamont9/Diamont6" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont10/Diamont4" to="Collectables/PathDiamont10/Diamont4" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont10/Diamont5" to="Collectables/PathDiamont10/Diamont5" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont10/Diamont6" to="Collectables/PathDiamont10/Diamont6" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont11/Diamont" to="Collectables/PathDiamont11/Diamont" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont11/Diamont2" to="Collectables/PathDiamont11/Diamont2" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont11/Diamont3" to="Collectables/PathDiamont11/Diamont3" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont11/Diamont4" to="Collectables/PathDiamont11/Diamont4" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont11/Diamont5" to="Collectables/PathDiamont11/Diamont5" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont11/Diamont11" to="Collectables/PathDiamont11/Diamont11" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont11/Diamont12" to="Collectables/PathDiamont11/Diamont12" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont11/Diamont13" to="Collectables/PathDiamont11/Diamont13" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont11/Diamont14" to="Collectables/PathDiamont11/Diamont14" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont11/Diamont15" to="Collectables/PathDiamont11/Diamont15" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont7" to="Collectables/PathDiamont12/Diamont7" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont8" to="Collectables/PathDiamont12/Diamont8" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont9" to="Collectables/PathDiamont12/Diamont9" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont10" to="Collectables/PathDiamont12/Diamont10" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont11" to="Collectables/PathDiamont12/Diamont11" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont12" to="Collectables/PathDiamont12/Diamont12" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont14" to="Collectables/PathDiamont12/Diamont14" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont15" to="Collectables/PathDiamont12/Diamont15" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont18" to="Collectables/PathDiamont12/Diamont18" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont19" to="Collectables/PathDiamont12/Diamont19" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont22" to="Collectables/PathDiamont12/Diamont22" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont23" to="Collectables/PathDiamont12/Diamont23" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont25" to="Collectables/PathDiamont12/Diamont25" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont28" to="Collectables/PathDiamont12/Diamont28" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont30" to="Collectables/PathDiamont12/Diamont30" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont31" to="Collectables/PathDiamont12/Diamont31" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont34" to="Collectables/PathDiamont12/Diamont34" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont35" to="Collectables/PathDiamont12/Diamont35" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont37" to="Collectables/PathDiamont12/Diamont37" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont39" to="Collectables/PathDiamont12/Diamont39" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont12/Diamont41" to="Collectables/PathDiamont12/Diamont41" method="_on_diamont_body_entered"]

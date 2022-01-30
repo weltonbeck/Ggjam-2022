@@ -32,10 +32,7 @@ func _ready():
 
 func changeLevel(index):
 	if all_levels.size() > index - 1:
-		if index == 1 :
-			resetHud(true)
-		else :
-			resetHud()
+		resetHud()
 		last_level = index
 		$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 		yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
@@ -63,8 +60,10 @@ func changeScenneCredits():
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")	
 
 func changeGameover():
+	
 	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
+	resetHud()
 	hideHud()
 	get_tree().change_scene("res://scennes/levels/tela_gameover.tscn")
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
@@ -75,19 +74,18 @@ func showHud() :
 func hideHud() :
 	$HudCanvas/Hud.visible = false
 	
-func resetHud(all = false) :
-	if all :
-		cat_ego = 50
-		owl_ego = 50
-		life = 5
+func resetHud() :
+	cat_ego = 50
+	owl_ego = 50
+	life = 5
 	total_diamonts = 0
 	renderHearts()
 	renderEgo()
 	
 func restoreLife() :
-	life +1
-	if life > max_life :
-		life = max_life
+	life = max_life
+#	if life > max_life :
+#		life = max_life
 	renderHearts()
 	
 func takeDamage() :

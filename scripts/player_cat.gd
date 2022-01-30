@@ -30,7 +30,7 @@ func _physics_process(_delta):
 	animation()
 	
 	if status == DEFENSE :
-		GameControl.changeEgo("cat", (GameControl.ego_price / 3) * _delta)
+		GameControl.changeEgo("cat", (GameControl.ego_price / 2) * _delta)
 		intangible = true
 	elif old_status == DEFENSE && status != DEFENSE :
 		intangible = false

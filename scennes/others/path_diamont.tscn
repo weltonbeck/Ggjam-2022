@@ -7,3 +7,4 @@ position = Vector2( 1.90735e-06, -22.4 )
 scale = Vector2( 1, 1.08 )
 curve = null
 script = ExtResource( 1 )
+distance = 60
