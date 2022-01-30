@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://sprites/effects/enemy-fireball.png" type="Texture" id=1]
 [ext_resource path="res://sprites/effects/enemy-fireball-boom.png" type="Texture" id=2]
@@ -58,7 +58,10 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=10]
-radius = 20.0998
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 18.1108
 
 [node name="EnemyFireBall" type="Area2D"]
 collision_layer = 4
@@ -67,7 +70,7 @@ script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -77,8 +80,8 @@ shape = SubResource( 10 )
 collision_layer = 4
 collision_mask = 10
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="KinematicBody2D"]
-shape = SubResource( 10 )
+[node name="CollisionAttack" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 11 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 

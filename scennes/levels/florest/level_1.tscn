@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scennes/levels/florest/background_florest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scennes/tilemap.tres" type="TileSet" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://scennes/others/fruit.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scennes/others/level_end.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scennes/others/path_diamont.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scennes/enemies/big_bat.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scennes/enemies/bat.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -54,6 +56,18 @@ tile_data = PoolIntArray( 65561, 3, 0, 131090, 3, 0, 131091, 3, 0, 131097, 2, 0,
 [node name="EnemyRat" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 936, 359 )
 
+[node name="Bat" parent="Enemies" instance=ExtResource( 12 )]
+position = Vector2( 142, 192 )
+fly_range = 250
+
+[node name="Bat2" parent="Enemies" instance=ExtResource( 12 )]
+position = Vector2( 907, 190 )
+fly_range = 80
+fly_mode = 0
+
+[node name="BigBat" parent="Enemies" instance=ExtResource( 11 )]
+position = Vector2( 813, 152 )
+
 [node name="Barriers" type="Node2D" parent="."]
 
 [node name="Barrier" parent="Barriers" instance=ExtResource( 5 )]
@@ -79,11 +93,11 @@ curve = SubResource( 1 )
 position = Vector2( 1058, 345.741 )
 scale = Vector2( 1, 0.925926 )
 
-[connection signal="body_entered" from="Collectables/PathDiamont/Diamont" to="Collectables/PathDiamont/Diamont" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="Collectables/PathDiamont/Diamont2" to="Collectables/PathDiamont/Diamont2" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="Collectables/PathDiamont/Diamont5" to="Collectables/PathDiamont/Diamont5" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="Collectables/PathDiamont/Diamont7" to="Collectables/PathDiamont/Diamont7" method="_on_diamont_body_entered"]
-[connection signal="body_entered" from="Collectables/PathDiamont/Diamont8" to="Collectables/PathDiamont/Diamont8" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont9" to="Collectables/PathDiamont/Diamont9" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont10" to="Collectables/PathDiamont/Diamont10" method="_on_diamont_body_entered"]
 [connection signal="body_entered" from="Collectables/PathDiamont/Diamont11" to="Collectables/PathDiamont/Diamont11" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont12" to="Collectables/PathDiamont/Diamont12" method="_on_diamont_body_entered"]
 [connection signal="body_entered" from="Collectables/PathDiamont/Diamont13" to="Collectables/PathDiamont/Diamont13" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont14" to="Collectables/PathDiamont/Diamont14" method="_on_diamont_body_entered"]
+[connection signal="body_entered" from="Collectables/PathDiamont/Diamont15" to="Collectables/PathDiamont/Diamont15" method="_on_diamont_body_entered"]
 [connection signal="body_entered" from="Collectables/PathDiamont/Diamont16" to="Collectables/PathDiamont/Diamont16" method="_on_diamont_body_entered"]

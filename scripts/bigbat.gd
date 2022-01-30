@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var pre_fireball = preload("res://scennes/effects/enemy_fireball.tscn")
 
+export(int) var life = 1
 onready var ready = true
 var flipped = false
 var searching = false
@@ -37,3 +38,12 @@ func _on_VisibilityEnabler2D_screen_entered():
 func _on_VisibilityEnabler2D_screen_exited():
 	$RayAttack.enabled = false	
 	searching = false
+
+func takeDamage(value):
+	life = life - value
+	if life <= 0 :
+		$Collision.disabled = true
+		$AudioDeath.play()
+		$AnimatedSprite.play("Destroy")
+		yield($AnimatedSprite, "animation_finished")
+		queue_free()

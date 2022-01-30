@@ -42,9 +42,10 @@ func _physics_process(delta):
 				if isAutoExplode == false :
 					isAutoExplode = true
 					$AudioDeath.play()
-				$AnimatedSprite.play('Destroy')
-				yield($AnimatedSprite,"animation_finished")
 				motion = Vector2.ZERO
+				$AnimatedSprite.play('Destroy')
+				$CollisionShape2D.disabled = true
+				yield($AnimatedSprite,"animation_finished")
 				attacking = false
 				queue_free()
 
@@ -75,6 +76,7 @@ func _physics_process(delta):
 func takeDamage(value):
 	life = life - value
 	if life <= 0 :
+		$Collision.disabled = true
 		$AudioDeath.play()
 		$AnimatedSprite.play("Destroy")
 		yield($AnimatedSprite, "animation_finished")
