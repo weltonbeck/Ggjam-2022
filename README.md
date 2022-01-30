@@ -2,7 +2,7 @@
 
 https://globalgamejam.org/2022/games/dual-egos-1
 
-[![Watch the video]](https://youtu.be/S1g7u1i4TkA)
+https://youtu.be/S1g7u1i4TkA
 
 ![splash](./sprites/cut/title-game.png)
 
