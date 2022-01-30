@@ -21,6 +21,8 @@ func _physics_process(_delta):
 		morph()
 		if is_on_floor() :
 			movement.x = movement.x / 2
+	else :
+		movement.x = 0
 	walk()
 	finishPhysics()
 
@@ -28,7 +30,7 @@ func _physics_process(_delta):
 	old_status = status
 
 	if status == FLY :
-		GameControl.changeEgo("owl", (GameControl.ego_price / 2) * _delta)
+		GameControl.changeEgo("owl", (GameControl.ego_price / 1.5) * _delta)
 	if status == FLY && $AudioWings.playing  == false :
 		$AudioWings.play()
 	elif status != FLY && $AudioWings.playing  == true :

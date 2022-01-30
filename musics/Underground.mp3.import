@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Underground.mp3-448e07687138a5a72bee4d3d6256b7d6.mp3str"
+
+[deps]
+
+source_file="res://musics/Underground.mp3"
+dest_files=[ "res://.import/Underground.mp3-448e07687138a5a72bee4d3d6256b7d6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

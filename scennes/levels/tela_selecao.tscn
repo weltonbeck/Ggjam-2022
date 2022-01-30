@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprites/cut/cut1.png" type="Texture" id=1]
 [ext_resource path="res://fonts/Chocolate Bar Demo.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/tela_selecao.gd" type="Script" id=3]
+[ext_resource path="res://musics/Monkey_Island_Band.mp3" type="AudioStream" id=4]
 
 [sub_resource type="Theme" id=1]
 
@@ -12,6 +13,11 @@ font_data = ExtResource( 2 )
 
 [node name="TelaSelecao" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+bus = "Music"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -26,7 +32,7 @@ margin_right = 70.0
 margin_bottom = 59.0
 theme = SubResource( 1 )
 custom_fonts/font = SubResource( 2 )
-text = "JOGAR"
+text = "Play"
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -38,7 +44,7 @@ margin_right = 71.0
 margin_bottom = 106.0
 theme = SubResource( 1 )
 custom_fonts/font = SubResource( 2 )
-text = "CREDITOS"
+text = "Credits"
 __meta__ = {
 "_edit_use_anchors_": true
 }

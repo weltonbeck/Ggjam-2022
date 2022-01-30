@@ -43,13 +43,20 @@ func changeLevel(index):
 		invokePlayer(last_hero, player_respawn[0].global_position)
 		$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
 	else :
-		changeScenneMain()
+		changeEndGame()
 
 func changeScenneMain():
 	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 	hideHud()
 	get_tree().change_scene(main_scenne)
+	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
+	
+func changeEndGame():
+	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
+	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
+	hideHud()
+	get_tree().change_scene("res://scennes/levels/tela_endgame.tscn")
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
 
 func changeScenneCredits():
@@ -60,7 +67,6 @@ func changeScenneCredits():
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
 
 func changeGameover():
-
 	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 	resetHud()
@@ -81,6 +87,7 @@ func resetHud() :
 	total_diamonts = 0
 	renderHearts()
 	renderEgo()
+	$HudCanvas/Hud/Diamonts/RichTextLabel.text = str(total_diamonts).pad_zeros(3) + " x "
 
 func restoreLife() :
 	life = max_life

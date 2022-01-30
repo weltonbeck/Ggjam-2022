@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/The_Monkey_Island_Band_Plays_Again.mp3-00a8a4d4e0b837f56cc4061a3f3e6647.mp3str"
+
+[deps]
+
+source_file="res://musics/The_Monkey_Island_Band_Plays_Again.mp3"
+dest_files=[ "res://.import/The_Monkey_Island_Band_Plays_Again.mp3-00a8a4d4e0b837f56cc4061a3f3e6647.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

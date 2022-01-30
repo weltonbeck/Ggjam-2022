@@ -24,13 +24,15 @@ func _physics_process(_delta):
 		else :
 			movement.x = movement.x / 2
 		morph()
+	else :
+		movement.x = 0
 	walk()
 	finishPhysics()
 
 	animation()
 
 	if status == DEFENSE :
-		GameControl.changeEgo("cat", (GameControl.ego_price / 2) * _delta)
+		GameControl.changeEgo("cat", (GameControl.ego_price / 1.5) * _delta)
 		intangible = true
 	elif old_status == DEFENSE && status != DEFENSE :
 		intangible = false
