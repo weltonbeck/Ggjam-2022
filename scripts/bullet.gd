@@ -3,7 +3,7 @@ extends Area2D
 var pre_explosion = preload("res://scennes/effects/explosion.tscn")
 
 var speed = 150
-var direction = Vector2(1, 0.5)
+var direction = Vector2(1, 0.25)
 
 func _process(delta):
 	translate(direction * speed * delta)

@@ -32,6 +32,7 @@ func _ready():
 
 func changeLevel(index):
 	if all_levels.size() > index - 1:
+		AudioServer.set_bus_mute(0, true)
 		resetHud()
 		last_level = index
 		$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
@@ -42,45 +43,56 @@ func changeLevel(index):
 		var player_respawn = get_tree().get_nodes_in_group("PlayerRespawn")
 		invokePlayer(last_hero, player_respawn[0].global_position)
 		$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
+		AudioServer.set_bus_mute(0, false)
 	else :
 		changeEndGame()
 
 func changeScenneMain():
+	AudioServer.set_bus_mute(0, true)
 	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 	hideHud()
 	get_tree().change_scene(main_scenne)
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
+	AudioServer.set_bus_mute(0, false)
 	
 func changeEndGame():
+	AudioServer.set_bus_mute(0, true)
 	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 	hideHud()
 	get_tree().change_scene("res://scennes/levels/tela_endgame.tscn")
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
+	AudioServer.set_bus_mute(0, false)
 
 func changeScenneCredits():
+	AudioServer.set_bus_mute(0, true)
 	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 	hideHud()
 	get_tree().change_scene("res://scennes/levels/tela_credito.tscn")
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
+	AudioServer.set_bus_mute(0, false)
 
 func changeGameStart():
+	AudioServer.set_bus_mute(0, true)
 	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 	resetHud()
 	hideHud()
 	get_tree().change_scene("res://scennes/levels/tela_historia.tscn")
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
+	AudioServer.set_bus_mute(0, false)
 
 func changeGameover():
+	AudioServer.set_bus_mute(0, true)
 	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 	resetHud()
 	hideHud()
 	get_tree().change_scene("res://scennes/levels/tela_gameover.tscn")
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
+	AudioServer.set_bus_mute(0, false)
 
 func showHud() :
 	$HudCanvas/Hud.visible = true

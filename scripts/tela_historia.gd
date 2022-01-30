@@ -17,3 +17,7 @@ func _ready():
 	$AnimationPlayer.play("07")
 	yield($AnimationPlayer, "animation_finished")
 	GameControl.changeLevel(1)
+
+
+func _on_BtnSkip_pressed():
+	GameControl.changeLevel(1)

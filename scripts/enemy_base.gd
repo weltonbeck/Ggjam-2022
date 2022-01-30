@@ -39,6 +39,7 @@ func flip() :
 func takeDamage(value):
 	life = life - value
 	if life <= 0 :
+		$CollisionShape2D.disabled = true
 		$AudioDeath.play()
 		$AnimatedSprite.play("Destroy")
 		yield($AnimatedSprite, "animation_finished")

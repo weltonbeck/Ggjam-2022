@@ -44,7 +44,7 @@ animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": false,
 "name": "Destroy",
-"speed": 5.0
+"speed": 15.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=8]
