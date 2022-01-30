@@ -4,7 +4,7 @@ export(int) var life = 2
 var t = 0.0
 var attacking
 func _physics_process(delta):
-	
+
 	if get_node_or_null("SnakeAnimation") and get_node_or_null("SnakeCollision"):
 		if attacking:
 			t += delta * 0.5
@@ -12,10 +12,10 @@ func _physics_process(delta):
 			$SnakeCollision.position = $SnakeCollision.position.linear_interpolate(Vector2($SnakeCollision.position.x, 0), t)
 		else:
 			t += delta * 0.019
-			
+
 			$SnakeAnimation.position = $SnakeAnimation.position.linear_interpolate(Vector2($SnakeAnimation.position.x, 180), t)
 			$SnakeCollision.position = $SnakeCollision.position.linear_interpolate(Vector2($SnakeCollision.position.x, 180), t)
-		
+
 
 func _on_Area2D_body_exited(body):
 	t = 0.0
@@ -30,7 +30,7 @@ func _on_Area2D_body_entered(body):
 		$SnakeAnimation.play("descendo")
 	attacking = false
 	t = 0.0
-	
+
 func takeDamage(value):
 	life = life - value
 	if life <= 0 :

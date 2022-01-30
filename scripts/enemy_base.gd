@@ -13,29 +13,29 @@ func _physics_process(_delta):
 	walk()
 	flip()
 	changeDirection()
-		
+
 func walk() :
 	if is_on_floor() :
 		movement.y = 0
 	movement.y += GRAVITY
-		
+
 	if walk :
 		movement.x = direction * speed
 	movement = move_and_slide(movement, Vector2(0,-1))
-	
-	
+
+
 func changeDirection():
 	if is_on_wall() :
 		movement.x = 0
 		direction = direction * -1
-	
+
 func flip() :
 	if movement.x < 0 :
 		$AnimatedSprite.flip_h = false
 	elif movement.x > 0 :
 		$AnimatedSprite.flip_h = true
-	
-	
+
+
 func takeDamage(value):
 	life = life - value
 	if life <= 0 :

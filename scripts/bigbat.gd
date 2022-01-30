@@ -36,7 +36,7 @@ func _on_VisibilityEnabler2D_screen_entered():
 
 
 func _on_VisibilityEnabler2D_screen_exited():
-	$RayAttack.enabled = false	
+	$RayAttack.enabled = false
 	searching = false
 
 func takeDamage(value):

@@ -23,22 +23,22 @@ func _physics_process(_delta):
 			movement.x = movement.x / 2
 	walk()
 	finishPhysics()
-	
+
 	animation()
 	old_status = status
-	
+
 	if status == FLY :
 		GameControl.changeEgo("owl", (GameControl.ego_price / 2) * _delta)
 	if status == FLY && $AudioWings.playing  == false :
 		$AudioWings.play()
 	elif status != FLY && $AudioWings.playing  == true :
 		$AudioWings.stop()
-	
+
 	if input_x > 0 :
 		$AtackPosition.position.x = 15
 	elif input_x < 0 :
 		$AtackPosition.position.x = -15
-		
+
 	if intangible == true :
 		$HitArea.monitoring = false
 	else :
@@ -51,7 +51,7 @@ func atack():
 		status = ATACK
 		var bullet = pre_bullet.instance()
 		bullet.global_position = $AtackPosition.global_position
-		
+
 		var bullet_y = 0.5
 		if is_on_floor() :
 			 bullet_y = 0
@@ -63,7 +63,7 @@ func atack():
 		$AnimatedSprite.play("Atack")
 		yield($AnimatedSprite, "animation_finished")
 		status = IDLE
-		
+
 	if status == ATACK :
 		movement.x = 0
 		movement.y = 0
@@ -89,7 +89,7 @@ func animation():
 			yield($AnimatedSprite, "animation_finished")
 			GameControl.invokePlayer("cat",global_position)
 			queue_free()
-	
+
 func setPause(value):
 	is_paused = value
 

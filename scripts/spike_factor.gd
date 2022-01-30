@@ -6,7 +6,7 @@ export(int) var size = 1 setget set_size
 
 func _ready():
 	create_spikes()
-	
+
 func _draw():
 	if is_inside_tree() && Engine.editor_hint:
 		create_spikes()
@@ -20,7 +20,7 @@ func create_spikes():
 	# remove todos
 	for spike in get_children():
 		spike.queue_free()
-	
+
 	# cria denovo
 	var i = 0
 	while i < size:

@@ -9,4 +9,4 @@ func takeDamage(value):
 		$AnimatedSprite.play("Destroy")
 		yield($AnimatedSprite, "animation_finished")
 		queue_free()
-		
+

@@ -76,7 +76,7 @@ func _physics_process(delta):
 func takeDamage(value):
 	life = life - value
 	if life <= 0 :
-		$Collision.disabled = true
+		$CollisionShape2D.disabled = true
 		$AudioDeath.play()
 		$AnimatedSprite.play("Destroy")
 		yield($AnimatedSprite, "animation_finished")
@@ -86,7 +86,7 @@ func set_fly_range(value):
 	fly_range = value
 	if Engine.editor_hint:
 		update()
-		
+
 func set_fly_mode(value):
 	fly_mode = value
 	if Engine.editor_hint:

@@ -12,7 +12,7 @@ func _ready():
 	pass
 
 func _physics_process(_delta):
-	
+
 	startPhysics()
 	if !is_paused :
 		getInput()
@@ -26,21 +26,21 @@ func _physics_process(_delta):
 		morph()
 	walk()
 	finishPhysics()
-	
+
 	animation()
-	
+
 	if status == DEFENSE :
 		GameControl.changeEgo("cat", (GameControl.ego_price / 2) * _delta)
 		intangible = true
 	elif old_status == DEFENSE && status != DEFENSE :
 		intangible = false
-		
+
 	if old_status != JUMP && status == JUMP :
 		$AudioJump.play()
 		GameControl.changeEgo("cat", (GameControl.ego_price / 2))
-	
+
 	old_status = status
-	
+
 	if intangible == true :
 		$HitArea.monitoring = false
 	else :
@@ -62,7 +62,7 @@ func atack():
 		yield($AnimatedSprite, "animation_finished")
 		$AtackArea.monitoring = false
 		status = IDLE
-		
+
 	if status == ATACK :
 		movement.x = movement.x / 2.5
 

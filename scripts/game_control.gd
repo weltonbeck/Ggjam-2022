@@ -44,36 +44,36 @@ func changeLevel(index):
 		$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
 	else :
 		changeScenneMain()
-		
+
 func changeScenneMain():
 	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 	hideHud()
 	get_tree().change_scene(main_scenne)
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
-	
+
 func changeScenneCredits():
 	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 	hideHud()
 	get_tree().change_scene("res://scennes/levels/tela_credito.tscn")
-	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")	
+	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
 
 func changeGameover():
-	
+
 	$HudCanvas/Fade/AnimationPlayer.play("FadeIn")
 	yield($HudCanvas/Fade/AnimationPlayer,"animation_finished")
 	resetHud()
 	hideHud()
 	get_tree().change_scene("res://scennes/levels/tela_gameover.tscn")
 	$HudCanvas/Fade/AnimationPlayer.play("FadeOut")
-	
+
 func showHud() :
 	$HudCanvas/Hud.visible = true
 
 func hideHud() :
 	$HudCanvas/Hud.visible = false
-	
+
 func resetHud() :
 	cat_ego = 50
 	owl_ego = 50
@@ -81,20 +81,20 @@ func resetHud() :
 	total_diamonts = 0
 	renderHearts()
 	renderEgo()
-	
+
 func restoreLife() :
 	life = max_life
 #	if life > max_life :
 #		life = max_life
 	renderHearts()
-	
+
 func takeDamage() :
 	if life > 0 :
 		life -= 1
 		renderHearts()
 	if life <= 0 :
 		changeGameover()
-	
+
 func renderHearts() :
 	for i in range($HudCanvas/Hud/Hearts.get_child_count()):
 		if i >= life :
@@ -111,7 +111,7 @@ func changeEgo(hero, price = 0):
 	elif  hero == "owl" && cat_ego < max_ego:
 		cat_ego += price
 		owl_ego -= price
-		
+
 	if owl_ego > max_ego :
 		owl_ego = max_ego
 	if cat_ego > max_ego :
@@ -121,7 +121,7 @@ func changeEgo(hero, price = 0):
 func renderEgo() :
 	$HudCanvas/Hud/EgoBar/CatColorRect.rect_scale.x = cat_ego / max_ego
 	$HudCanvas/Hud/EgoBar/OwlColorRect.rect_scale.x = owl_ego / max_ego
-	
+
 func invokePlayer(type, position):
 	last_hero = type
 	var player
