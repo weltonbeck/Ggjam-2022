@@ -26,14 +26,14 @@ func _draw():
 			draw_rect(Rect2(Vector2(0, 0), Vector2(5, -fly_range)), Color(1,1,1,1))
 
 func _physics_process(delta):
-	if ! Engine.editor_hint:
+	if ! Engine.editor_hint && life > 0 :
 		if get_tree().get_nodes_in_group("Player"):
 			$RayToFollow.look_at(get_tree().get_nodes_in_group("Player")[0].global_position)
 		if $RayToFollow.is_colliding() and $RayToFollow.get_collider().is_in_group("Player") and !attacking:
 			pre_attack_pos = global_position
 			attack_pos = $RayToFollow.get_collider().global_position
 			attacking = true
-
+		
 		if attacking:
 			var direction = global_position.direction_to(attack_pos)
 			motion = motion.linear_interpolate(direction * 700, delta)
