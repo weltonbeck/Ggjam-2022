@@ -628,6 +628,7 @@ position = Vector2( 352, 224 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )
+autoplay = true
 bus = "Music"
 
 [connection signal="body_entered" from="Colectables/PathDiamont11/Diamont5" to="Colectables/PathDiamont11/Diamont5" method="_on_diamont_body_entered"]
