@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://scennes/levels/florest/background_florest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scennes/tilemap.tres" type="TileSet" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://sprites/others/keys.png" type="Texture" id=19]
 [ext_resource path="res://scennes/others/diamont.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scennes/others/river.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scennes/others/screen_controls.tscn" type="PackedScene" id=22]
 
 [sub_resource type="Curve2D" id=13]
 _data = {
@@ -444,6 +445,8 @@ position = Vector2( 7680, 1312 )
 stream = ExtResource( 13 )
 autoplay = true
 bus = "Music"
+
+[node name="ScreenControls" parent="." instance=ExtResource( 22 )]
 
 [connection signal="body_entered" from="Collectables/PathDiamont13/Diamont5" to="Collectables/PathDiamont13/Diamont5" method="_on_diamont_body_entered"]
 [connection signal="body_entered" from="Collectables/PathDiamont13/Diamont6" to="Collectables/PathDiamont13/Diamont6" method="_on_diamont_body_entered"]

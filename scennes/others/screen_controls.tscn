@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/hud/hud-touchbutton-jump.png" type="Texture" id=1]
+[ext_resource path="res://sprites/hud/hud-touchbutton-directional.png" type="Texture" id=2]
+
+[node name="ScreenControls" type="CanvasLayer"]
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+position = Vector2( 445, 220 )
+normal = ExtResource( 1 )
+action = "ui_atack"
+visibility_mode = 1
+
+[node name="Transform" type="TouchScreenButton" parent="."]
+position = Vector2( 470, 195 )
+normal = ExtResource( 1 )
+action = "ui_morph"
+visibility_mode = 1
+
+[node name="Attack" type="TouchScreenButton" parent="."]
+position = Vector2( 420, 245 )
+normal = ExtResource( 1 )
+action = "ui_jump"
+visibility_mode = 1
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2( 75, 205 )
+normal = ExtResource( 2 )
+action = "ui_right"
+visibility_mode = 1
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2( 50, 205 )
+scale = Vector2( -1, 1 )
+normal = ExtResource( 2 )
+action = "ui_left"
+visibility_mode = 1
+
+[node name="Down" type="TouchScreenButton" parent="."]
+position = Vector2( 50, 245 )
+normal = ExtResource( 2 )
+action = "ui_defense"
+visibility_mode = 1

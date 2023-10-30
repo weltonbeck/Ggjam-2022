@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scennes/others/player_respawn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scennes/others/barrier.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://scennes/others/death_area.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scennes/enemies/big_bat.tscn" type="PackedScene" id=17]
 [ext_resource path="res://musics/The_Monkey_Island_Band_Plays_Again.mp3" type="AudioStream" id=18]
+[ext_resource path="res://scennes/others/screen_controls.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Curve2D" id=3]
 _data = {
@@ -529,6 +530,8 @@ position = Vector2( 7320, 792 )
 stream = ExtResource( 18 )
 autoplay = true
 bus = "Music"
+
+[node name="ScreenControls" parent="." instance=ExtResource( 19 )]
 
 [connection signal="body_entered" from="collected/PathDiamont3/Diamont9" to="collected/PathDiamont3/Diamont9" method="_on_diamont_body_entered"]
 [connection signal="body_entered" from="collected/PathDiamont3/Diamont10" to="collected/PathDiamont3/Diamont10" method="_on_diamont_body_entered"]

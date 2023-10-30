@@ -945,9 +945,6 @@ visible_characters = 0
 percent_visible = 0.0
 text = "The magical forest of Elthor! A wonderful place protected by the monkey god Yffull. It is also home to other beings who live in harmony.."
 fit_content_height = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/01 = SubResource( 1 )

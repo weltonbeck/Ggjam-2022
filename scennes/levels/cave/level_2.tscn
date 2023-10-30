@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://scennes/others/player_respawn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scennes/others/barrier.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://scennes/enemies/spike_factor.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scennes/enemies/spikeball.tscn" type="PackedScene" id=18]
 [ext_resource path="res://musics/Underground.mp3" type="AudioStream" id=19]
+[ext_resource path="res://scennes/others/screen_controls.tscn" type="PackedScene" id=20]
 
 [sub_resource type="Curve2D" id=8]
 _data = {
@@ -630,6 +631,8 @@ position = Vector2( 352, 224 )
 stream = ExtResource( 19 )
 autoplay = true
 bus = "Music"
+
+[node name="ScreenControls" parent="." instance=ExtResource( 20 )]
 
 [connection signal="body_entered" from="Colectables/PathDiamont11/Diamont5" to="Colectables/PathDiamont11/Diamont5" method="_on_diamont_body_entered"]
 [connection signal="body_entered" from="Colectables/PathDiamont11/Diamont6" to="Colectables/PathDiamont11/Diamont6" method="_on_diamont_body_entered"]
